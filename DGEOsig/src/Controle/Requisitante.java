@@ -3,14 +3,14 @@ package Controle;
 import objeto.modelo.Pessoa;
 
 public abstract class Requisitante extends Pessoa{
-	String matricula;
+	static String matricula;
 	Boolean isLimitado;
 	Boolean hasMaterial;
 	Emprestimo emprestimoAtivo;
 	Emprestimo historicoEmprestimo;
 	
 	public Requisitante() {
-		super();
+		super(matricula, matricula);
 		
 	
 	}

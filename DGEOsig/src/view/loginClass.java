@@ -1,10 +1,12 @@
 package view;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class loginClass {
+public class loginClass 
+{
 
     @FXML
     private TextField login;
@@ -16,8 +18,9 @@ public class loginClass {
     private Button start;
 
     @FXML
-    void start(ActionEvent event) {
-    	
+    void start(ActionEvent event) 
+    {
+    	System.out.println("teste");
     }
 
 }
