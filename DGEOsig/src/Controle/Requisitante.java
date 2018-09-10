@@ -1,4 +1,4 @@
-package src;
+package Controle;
 
 import objeto.modelo.Pessoa;
 
