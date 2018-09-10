@@ -10,7 +10,7 @@ public class LoginControle
 		LoginDAO veri = new LoginDAOSemBanco();
 		if (veri.temUsuario(usuario) && veri.getSenha(usuario).equals(senha))
 		{
-			// TODO Show Main Screen & Close past Login Screen
+			
 		}
 		else 
 		{

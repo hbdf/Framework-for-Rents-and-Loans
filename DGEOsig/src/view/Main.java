@@ -1,3 +1,5 @@
+package view;
+
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -12,9 +14,9 @@ public class Main extends Application
 	{
 		
 		try {
-			Parent root =  FXMLLoader.load(getClass().getResource("/src/view/login.fxml"));
-			Scene scene = new Scene (root, 400, 400);
-			scene.getStylesheets().add(getClass().getResource("/src/application.css").toExternalForm());
+			Parent root =  FXMLLoader.load(getClass().getResource("/view/login.fxml"));
+			Scene scene = new Scene (root);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (IOException e) {
