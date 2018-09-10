@@ -1,4 +1,4 @@
-package src;
+package objeto.modelo;
 
 public class Servidor extends Pessoa{
 	String matriculaSIAPE;

@@ -1,5 +1,7 @@
 package src;
 
+import objeto.modelo.Pessoa;
+
 public abstract class Requisitante extends Pessoa{
 	String matricula;
 	Boolean isLimitado;

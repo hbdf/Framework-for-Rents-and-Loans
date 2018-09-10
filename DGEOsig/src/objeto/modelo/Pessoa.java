@@ -1,4 +1,4 @@
-package src;
+package objeto.modelo;
 
 public abstract class Pessoa {
 	String CPF;
@@ -20,5 +20,4 @@ public abstract class Pessoa {
 	public String getEmail() {
 		return email;
 	}
-	
 }
