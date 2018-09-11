@@ -4,9 +4,10 @@ public abstract class Pessoa {
 	String CPF;
 	String nome;
 	String email;
-	public Pessoa(String nome, String email) {
+	String matricula;
+	public Pessoa(String nome, String mat) {
 		this.nome = nome;
-		this.email = email;
+		this.matricula = mat;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -19,5 +20,8 @@ public abstract class Pessoa {
 	}
 	public String getEmail() {
 		return email;
+	}
+	public String getMatricula() {
+		return matricula;
 	}
 }
