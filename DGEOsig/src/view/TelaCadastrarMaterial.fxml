@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="TelaPrincipal" fx:id="TelaPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="742.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TelaPrincipalClass">
+   <children>
+      <BorderPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="561.0" prefWidth="742.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="521.0" prefWidth="154.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button id="pricipak" mnemonicParsing="false" prefHeight="72.0" prefWidth="164.0" styleClass="leftButtons" text="Principal" textAlignment="CENTER" />
+                  <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="173.0" styleClass="leftButtons" text="Emprestimos" />
+                  <Button layoutX="10.0" layoutY="83.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="174.0" styleClass="leftButtons" text="Cadastrar Usuario" />
+                  <Button layoutX="10.0" layoutY="235.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="183.0" styleClass="leftButtons" text="Consultar" />
+                  <Button layoutX="10.0" layoutY="311.0" lineSpacing="5.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="155.0" styleClass="leftButtons" text="Cadastrar Material" textOverrun="WORD_ELLIPSIS" />
+                  <Button layoutX="10.0" layoutY="159.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="165.0" styleClass="leftButtons" text="Relatorio" />
+                  <Button layoutX="10.0" layoutY="387.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="162.0" styleClass="leftButtons" text="Button" />
+               </children>
+            </VBox>
+         </left>
+         <top>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="TOP_RIGHT">
+              <items>
+                  <MenuButton mnemonicParsing="false" text="MenuButton">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Criar Adm" />
+                      <MenuItem mnemonicParsing="false" text="Action 2" />
+                    </items>
+                  </MenuButton>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="550.0" text="DGEOsig" textAlignment="CENTER" />
+                  <Button mnemonicParsing="false" text="Sair" />
+              </items>
+            </ToolBar>
+         </top>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane alignment="CENTER" layoutX="10.0" layoutY="27.0" prefHeight="410.0" prefWidth="422.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="172.0" minWidth="10.0" prefWidth="163.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="247.0" minWidth="10.0" prefWidth="222.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="130.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="328.0" minHeight="10.0" prefHeight="328.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Numero do tombamento" />
+                        <Label text="Nome" GridPane.rowIndex="1" />
+                        <Label text="Descrição" GridPane.rowIndex="2" />
+                        <TextField fx:id="numeroTombamento" GridPane.columnIndex="1" />
+                        <TextField fx:id="nomeMaterial" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextArea fx:id="descricao" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+                  <Button layoutX="470.0" layoutY="463.0" mnemonicParsing="false" onAction="#cadastrarMaterial" text="Cadastrar" />
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
