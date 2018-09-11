@@ -5,13 +5,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane prefHeight="90.0" prefWidth="269.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1">
+<AnchorPane prefHeight="90.0" prefWidth="269.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.UsuarioNaoCadastradoClass">
    <children>
       <VBox layoutX="5.0" prefHeight="90.0" prefWidth="300.0">
          <children>
-            <Label prefHeight="18.0" prefWidth="299.0" text="Usuário ou Senha não confere!" />
-            <Button id="OkButton" alignment="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="302.0" text="OK!" textAlignment="CENTER" />
+            <Label fx:id="label" prefHeight="18.0" prefWidth="299.0" text="Usuário ou Senha não confere!" />
+            <Button id="OkButton" fx:id="OkButton" alignment="CENTER" mnemonicParsing="false" onAction="#CloseWindow" prefHeight="26.0" prefWidth="302.0" text="OK!" textAlignment="CENTER" />
          </children>
       </VBox>
    </children>

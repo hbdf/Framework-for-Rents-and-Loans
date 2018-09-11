@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class loginClass 
 {
@@ -30,11 +31,19 @@ public class loginClass
     void start(ActionEvent event) 
     {
     	try {
-			lg.PodeEntrar(login.getText(), senha.getText());
+			if(lg.PodeEntrar(login.getText(), senha.getText()))
+			{
+				this.close();
+			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }
-
+    void close ()
+    {
+    	Stage stage = (Stage) start.getScene().getWindow(); //Obtendo a janela atual
+	    stage.close();
+    }
+    
 }
