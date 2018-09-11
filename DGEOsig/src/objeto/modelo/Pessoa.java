@@ -15,6 +15,9 @@ public abstract class Pessoa {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public void setCPF(String CPF) {
+		this.CPF = CPF;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -23,5 +26,8 @@ public abstract class Pessoa {
 	}
 	public String getMatricula() {
 		return matricula;
+	}
+	public String getCPF() {
+		return CPF;
 	}
 }

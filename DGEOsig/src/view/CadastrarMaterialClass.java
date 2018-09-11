@@ -22,7 +22,7 @@ public class CadastrarMaterialClass {
 
     @FXML
     void cadastrarMaterial(ActionEvent event) {
-
+    	
     }
 
 }

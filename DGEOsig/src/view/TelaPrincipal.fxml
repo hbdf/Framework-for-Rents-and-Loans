@@ -5,7 +5,7 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="TelaPrincipal" fx:id="TelaPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"	prefHeight="560" prefWidth="784"  xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TelaPrincipalClass">
+<AnchorPane id="TelaPrincipal" fx:id="TelaPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560" prefWidth="784" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TelaPrincipalClass">
    <children>
       <ToolBar layoutX="-2.0" prefHeight="40.0" prefWidth="784">
         <items>
@@ -14,7 +14,7 @@
             <Label prefHeight="18.0" prefWidth="136.0" />
         </items>
       </ToolBar>
-      <Button layoutX="71.0" layoutY="127.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="136.0"  text="Cadastrar Aluno" />
+      <Button fx:id="CadastrarAluno" layoutX="71.0" layoutY="127.0" mnemonicParsing="false" onAction="#CadastrarAluno" prefHeight="59.0" prefWidth="136.0" text="Cadastrar Aluno" />
       <Button layoutX="230.0" layoutY="127.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="156" text="Cadastrar Servidor" />
       <Button layoutX="71.0" layoutY="221.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="136.0" text="Remover Aluno" />
       <Button layoutX="230.0" layoutY="221.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="156.0" text="Remover Servidor" />

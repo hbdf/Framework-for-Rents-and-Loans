@@ -8,7 +8,7 @@ public class AlunoDAO {
 	public void cadastrarAluno(Pessoa p) {
 		alunos.put(p.getMatricula(), p);
 	}
-	public boolean cerificarAluno(String mat) {
+	public boolean verificarAluno(String mat) {
 		return alunos.containsKey(mat);
 	}
 }

@@ -1,3 +1,5 @@
+package objeto.modelo;
+
 import objeto.modelo.Pessoa;
 
 public class Aluno extends Pessoa{
