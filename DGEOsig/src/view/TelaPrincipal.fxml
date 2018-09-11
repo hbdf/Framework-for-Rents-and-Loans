@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="TelaPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="742.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TelaPrincipalClass">
+<AnchorPane id="TelaPrincipal" fx:id="TelaPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="742.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TelaPrincipalClass">
    <children>
       <BorderPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="561.0" prefWidth="742.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
             <VBox prefHeight="561.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button id="pricipak" mnemonicParsing="false" prefHeight="73.0" prefWidth="136.0" styleClass="leftButtons" text="Pricipal" textAlignment="CENTER" />
+                  <Button id="pricipak" mnemonicParsing="false" prefHeight="73.0" prefWidth="136.0" styleClass="leftButtons" text="Principal" textAlignment="CENTER" />
                   <Button mnemonicParsing="false" prefHeight="76.0" prefWidth="136.0" styleClass="leftButtons" text="Emprestimos" />
                   <Button layoutX="10.0" layoutY="83.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="136.0" styleClass="leftButtons" text="Cadastrar" />
                   <Button layoutX="10.0" layoutY="235.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="136.0" styleClass="leftButtons" text="Consultar" />

@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import objeto.modelo.LoginDAO;
 import objeto.modelo.LoginDAOSemBanco;
 import view.TelaPrincipalClass;
+import view.UsuarioNaoCadastradoClass;
 
 public class LoginControle 
 {
@@ -23,8 +24,8 @@ public class LoginControle
 		}
 		else 
 		{
-			//TODO Show Screen with Wrong User/Password
-			System.out.println("Deu Ruim");
+			UsuarioNaoCadastradoClass erro = new UsuarioNaoCadastradoClass();
+			erro.open();
 		}
 	}
 }
