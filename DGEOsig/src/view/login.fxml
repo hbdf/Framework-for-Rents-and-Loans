@@ -9,7 +9,7 @@
 <Pane id="root" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="204.0" prefWidth="233.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.loginClass">
    <children>
       <TextField id="login" fx:id="login" layoutX="42.0" layoutY="63.0" promptText="Login" style="-fx-alignment: center;" />
-      <PasswordField id="senha" layoutX="42.0" layoutY="119.0" promptText="Senha" style="-fx-alignment: center;" />
+      <PasswordField id="senha" fx:id="senha" layoutX="42.0" layoutY="119.0" promptText="Senha" style="-fx-alignment: center;" />
       <Label fx:id="logo" contentDisplay="CENTER" layoutX="87.0" layoutY="30.0" text="DGEOsig" textAlignment="CENTER" />
       <Button id="Entrar" fx:id="start" layoutX="92.0" layoutY="165.0" mnemonicParsing="false" onAction="#start" text="Entrar" />
    </children>
