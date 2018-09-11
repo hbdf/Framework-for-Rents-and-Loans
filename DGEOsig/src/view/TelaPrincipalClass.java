@@ -24,6 +24,7 @@ public class TelaPrincipalClass {
 	}
 	@FXML
 	private Button CadastrarAluno;
+	
 	public void CadastrarAluno(ActionEvent event) {
 		TelaCadastrarAluno cad = new TelaCadastrarAluno();
 		try {
