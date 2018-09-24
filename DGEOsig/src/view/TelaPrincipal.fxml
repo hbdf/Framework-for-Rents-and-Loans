@@ -2,10 +2,13 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 
-<AnchorPane id="TelaPrincipal" fx:id="TelaPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560" prefWidth="784" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TelaPrincipalClass">
+<AnchorPane id="TelaPrincipal" fx:id="TelaPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TelaPrincipalClass">
    <children>
       <ToolBar layoutX="-2.0" prefHeight="40.0" prefWidth="784">
         <items>
@@ -14,14 +17,23 @@
             <Label prefHeight="18.0" prefWidth="136.0" />
         </items>
       </ToolBar>
-      <Button fx:id="CadastrarAluno" layoutX="71.0" layoutY="127.0" mnemonicParsing="false" onAction="#CadastrarAluno" prefHeight="59.0" prefWidth="136.0" text="Cadastrar Aluno" />
-      <Button layoutX="230.0" layoutY="127.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="156" text="Cadastrar Servidor" />
-      <Button layoutX="71.0" layoutY="221.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="136.0" text="Remover Aluno" />
-      <Button layoutX="230.0" layoutY="221.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="156.0" text="Remover Servidor" />
-      <Button layoutX="557.0" layoutY="127.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="186.0" text="Realizar Emprestimo" />
-      <Button layoutX="557.0" layoutY="217.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="186.0" text="Retornar Emprestimo" />
-      <Button layoutX="394.0" layoutY="124.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="146.0" text="Cadastrar Material" />
-      <Button layoutX="394.0" layoutY="221.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="146.0" text="Remover Material" />
-      <Button layoutX="101.0" layoutY="311.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="261.0" text="Gerar Relatório " />
+      <HBox layoutX="-2.0" layoutY="40.0" prefHeight="26.0" prefWidth="800.0">
+         <children>
+            <SplitMenuButton mnemonicParsing="false" text="Usuario">
+              <items>
+                <MenuItem fx:id="CadastrarAluno" mnemonicParsing="false" onAction="#CadastrarAluno" text="Cadastrar Aluno" />
+                <MenuItem mnemonicParsing="false" text="Buscar Aluno" />
+                  <MenuItem mnemonicParsing="false" text="Cadastrar Servidor" />
+                  <MenuItem mnemonicParsing="false" text="Buscar Servidor" />
+              </items>
+            </SplitMenuButton>
+            <SplitMenuButton layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Material">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Cadastrar" />
+                  <MenuItem mnemonicParsing="false" text="Buscar" />
+               </items>
+            </SplitMenuButton>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

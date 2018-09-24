@@ -1,3 +1,4 @@
+
 package view;
 
 import java.io.IOException;
@@ -8,7 +9,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class TelaPrincipalClass {
@@ -23,7 +25,10 @@ public class TelaPrincipalClass {
 		primaryStage.show();
 	}
 	@FXML
-	private Button CadastrarAluno;
+    private AnchorPane TelaPrincipal;
+
+    @FXML
+    private MenuItem CadastrarAluno;
 	
 	public void CadastrarAluno(ActionEvent event) {
 		TelaCadastrarAluno cad = new TelaCadastrarAluno();
