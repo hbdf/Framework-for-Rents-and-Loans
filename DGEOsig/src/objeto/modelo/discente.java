@@ -12,7 +12,7 @@ public abstract class discente extends Pessoa{
 	}
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
-	}
+	} 
 	public String getMatricula() {
 		return matricula ;
 	}
