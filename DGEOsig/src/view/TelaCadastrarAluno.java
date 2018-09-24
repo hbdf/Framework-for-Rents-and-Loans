@@ -22,23 +22,26 @@ public class TelaCadastrarAluno {
 	private TextField EmailCadastrar;
 	@FXML
 	private TextField MatriculaCadastrar;
+    @FXML
+    private TextField UsuarioCadastrar;
 	@FXML
 	private Button Cadastrar;
-	@FXML
-	private CheckBox Administrador;
+
 	
 	public void open() throws IOException {
 		Stage primaryStage = new Stage();
-		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/TelaPrincipalCadastrar.fxml"));
+		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/TelaCadastrarAluno.fxml"));
 		Scene scene = new Scene (root);
 		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
 	
+	@FXML
 	public void cadastrar (ActionEvent event) {
 		CadastrarAlunoControle cad = new CadastrarAlunoControle();
 		boolean x = cad.cadastrar(CPFCadastrar.getText(), NomeCadastrar.getText(), EmailCadastrar.getText(), MatriculaCadastrar.getText());
+		System.out.println(CPFCadastrar.getText()+" "+ NomeCadastrar.getText()+" "+ EmailCadastrar.getText()+" "+ MatriculaCadastrar.getText());
 		if(x) {
 			Stage stage = (Stage) Cadastrar.getScene().getWindow(); //Obtendo a janela atual
 		    stage.close();
@@ -46,4 +49,9 @@ public class TelaCadastrarAluno {
 			
 		}
 	}
+	@FXML
+    void cancelar(ActionEvent event) {
+		Stage stage = (Stage) Cadastrar.getScene().getWindow(); //Obtendo a janela atual
+	    stage.close();
+    }
 }
