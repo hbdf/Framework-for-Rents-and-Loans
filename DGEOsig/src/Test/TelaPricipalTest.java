@@ -10,10 +10,10 @@ import view.TelaPrincipalClass;
 
 class TelaPricipalTest {
 
-	@Test
-	void abrirTelaPrincipal() throws IOException {
-		TelaPrincipalClass tela = new TelaPrincipalClass();
-		tela.open();
-	}
+//	@Test
+//	void abrirTelaPrincipal() throws IOException {
+//		TelaPrincipalClass tela = new TelaPrincipalClass();
+//		tela.open();
+//	}
 
 }
