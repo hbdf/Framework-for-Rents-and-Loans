@@ -43,6 +43,7 @@ public class loginClass
     void close ()
     {
     	Stage stage = (Stage) start.getScene().getWindow(); //Obtendo a janela atual
+    	System.out.println("Sai Login");
 	    stage.close();
     }
     
