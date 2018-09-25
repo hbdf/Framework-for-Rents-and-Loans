@@ -48,14 +48,19 @@ public class TelaBuscarAluno {
     	String chave = tfBusca.getText(); // MATRICULA PARA A REMOÇÃO
     	new CadastrarAlunoControle().removerAluno(chave);
     	System.out.println("Removeu");
+    	
+    	this.close();
     }
 
     @FXML
     void cancelar(ActionEvent event) {
-    	Stage stage = (Stage) btnCancelar.getScene().getWindow(); //Obtendo a janela atual
-	    stage.close();
+    	this.close();
     }
 
+	private void close() {
+		Stage stage = (Stage) btnCancelar.getScene().getWindow(); //Obtendo a janela atual
+	    stage.close();
+	}
 	public void open() {
 		try {
 		Stage buscarAluno = new Stage();
