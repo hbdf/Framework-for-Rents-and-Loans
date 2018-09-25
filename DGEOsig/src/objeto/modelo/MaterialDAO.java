@@ -4,26 +4,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MaterialDAO {
-	Map<String, Integer> material;
+	Map<String, Material> listaMaterial; //a ser definido
 	
 	public MaterialDAO() {
-		material = new HashMap<>();
+		listaMaterial = new HashMap<>();
 	}
-	public boolean cadastrarMaterial(String novoMaterial) {
-		if(this.material.containsKey(novoMaterial)){
-			this.material.put(novoMaterial, this.material.get(novoMaterial)+1);
+	public boolean cadastrarlistaMaterial(String novoMaterial) {
+		if(this.listaMaterial.containsKey(novoMaterial)){
+			//this.listaMaterial.put(novoMaterial, );
 			return true;
 		}else
 			return false;
 	}
 	public boolean contem(String obj){
-		if(!this.material.containsKey(obj)){
+		if(!this.listaMaterial.containsKey(obj)){
 			return false;
 		}return true;
 	}
 	public boolean remove(String obj){
 		if(this.contem(obj)) {
-			this.material.remove(obj);
+			this.listaMaterial.remove(obj);
 			return true;
 		}
 		return false;
