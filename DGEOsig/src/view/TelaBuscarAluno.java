@@ -4,6 +4,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import objeto.modelo.Aluno;
+import Controle.CadastrarAlunoControle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -37,12 +39,14 @@ public class TelaBuscarAluno {
     private TextField tfBusca;
     @FXML
     void buscarAluno(ActionEvent event) {
-    	tfBusca.getText(); // MATRICULA PARA A BUSCA
+    	String chave = tfBusca.getText(); // MATRICULA PARA A BUSCA
+    	Aluno al = new CadastrarAlunoControle().busca(chave);
     	System.out.println("entrou em busca");
     	btnRemover.setOpacity(1.0); // botao remover aparece apenas quando clicado em remover
     }
     @FXML void remover(ActionEvent event){
-    	tfBusca.getText(); // MATRICULA PARA A REMOÇÃO
+    	String chave = tfBusca.getText(); // MATRICULA PARA A REMOÇÃO
+    	new CadastrarAlunoControle().removerAluno(chave);
     	System.out.println("Removeu");
     }
 

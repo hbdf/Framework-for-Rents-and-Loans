@@ -19,4 +19,12 @@ public class CadastrarAlunoControle {
 			return true;
 		}
 	}
+	public boolean removerAluno(String chave) {
+		//REMOVENDO EM MEMORIA
+		return true;
+	}
+	public Aluno busca(String chave) {
+		// retorno objeto Aluno
+		return null; //
+	}
 }
