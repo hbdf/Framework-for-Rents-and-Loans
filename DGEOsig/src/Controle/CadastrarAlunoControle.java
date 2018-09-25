@@ -14,8 +14,9 @@ public class CadastrarAlunoControle {
 		return true;
 	}
 	public boolean removerAluno(String chave) {
-		//REMOVENDO EM MEMORIA
-		return true;
+		AlunoDAO banco = new AlunoDAO();
+		
+		return banco.remover(chave); //
 	}
 	public Aluno busca(String chave) {
 		AlunoDAO banco = new AlunoDAO();

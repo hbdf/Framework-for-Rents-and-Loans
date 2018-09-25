@@ -41,6 +41,7 @@ public class TelaBuscarAluno {
     void buscarAluno(ActionEvent event) {
     	String chave = tfBusca.getText(); // MATRICULA PARA A BUSCA
     	Aluno al = new CadastrarAlunoControle().busca(chave);
+    //	System.out.println(al.getCPF());
     	lblCPF.setText(al.getCPF());
     	lblEmail.setText(al.getEmail());
     	lblMatricula.setText(al.getMatricula());

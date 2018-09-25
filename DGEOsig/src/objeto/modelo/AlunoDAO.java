@@ -21,19 +21,33 @@ public class AlunoDAO {
 		em.getTransaction().begin();
 		em.merge(a);
 		em.getTransaction().commit();
-		emf	.close();
+		emf.close();
 	}
 	public Aluno buscar(String matricula) {
 		Aluno ret;
 		em.getTransaction().begin();
-		Query q =  em.createQuery("select aluno from Aluno aluno where CPF = " + matricula);
+		Query q =  em.createQuery("select aluno from Aluno aluno where matricula = " + matricula);
 		List<Aluno> l = q.getResultList();
 		System.out.println(l.size());
+		if(l.size() == 0)
+			return null;
 		ret = l.get(0);
 		em.getTransaction().commit();
-		emf	.close();
+		emf.close();
 		
 		return ret;
+	}
+	
+	public boolean remover(String matricula) {
+		Aluno al = buscar(matricula);
+		if(al == null) 
+			return false;
+		em.getTransaction().begin();
+		Query q = em.createNativeQuery("DELETE Aluno FROM Aluno WHERE matricula = " + al.getMatricula());
+		q.executeUpdate();
+		em.getTransaction().commit();
+		emf.close();
+		return true;
 	}
 	
 }
