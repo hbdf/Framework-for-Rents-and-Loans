@@ -5,6 +5,9 @@ import Controle.LoginControle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -36,10 +39,25 @@ public class loginClass
 				this.close();
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }
+    public void open()  
+	{
+		
+		try {
+			Stage primaryStage = new Stage();
+			Parent root =  FXMLLoader.load(getClass().getResource("/view/login.fxml"));
+			Scene scene = new Scene (root);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
     void close ()
     {
     	Stage stage = (Stage) start.getScene().getWindow(); //Obtendo a janela atual

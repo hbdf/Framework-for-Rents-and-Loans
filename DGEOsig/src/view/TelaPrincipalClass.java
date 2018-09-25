@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
@@ -23,6 +24,8 @@ public class TelaPrincipalClass {
     private MenuItem CadastrarAluno;
     @FXML
     private Label lblServidor;
+    @FXML
+    private Button btnSair;
 
 
 	public void open() throws IOException 
@@ -36,7 +39,9 @@ public class TelaPrincipalClass {
 		primaryStage.show();
 		System.out.println("OK!");
 	}
-
+	public void buscarAluno(ActionEvent event) {
+		new TelaBuscarAluno().open();
+	}
 	public void CadastrarAluno(ActionEvent event) {
 		TelaCadastrarAluno cad = new TelaCadastrarAluno();
 		try {
@@ -45,5 +50,14 @@ public class TelaPrincipalClass {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	// LOGOUT
+	public void sair(ActionEvent event){
+		Stage stage = (Stage) btnSair.getScene().getWindow(); //Obtendo a janela atual
+    	System.out.println("Voltou pra tela de login");
+	    stage.close();
+	    Main login = new Main();
+	    Stage primaryStage = new Stage();
+		login.start(primaryStage );
 	}
 }
