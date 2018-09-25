@@ -58,6 +58,15 @@ public class TelaPrincipalClass {
 	public void buscarMaterial(ActionEvent event) {
 		new TelaBuscarMaterial().open();
 	}
+	@FXML
+    void realizarEmprestimo(ActionEvent event) {
+		new TelaRealizarEmprestimo().open();
+    }
+	@FXML
+    void buscarEmprestimo(ActionEvent event) {
+		System.out.println("Busca Emprestimo!");
+    }
+	
 	// LOGOUT
 	public void sair(ActionEvent event){
 		Stage stage = (Stage) btnSair.getScene().getWindow(); //Obtendo a janela atual

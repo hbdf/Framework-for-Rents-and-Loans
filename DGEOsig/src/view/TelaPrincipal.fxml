@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane id="TelaPrincipal" fx:id="TelaPrincipal" maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TelaPrincipalClass">
+<AnchorPane id="TelaPrincipal" fx:id="TelaPrincipal" maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TelaPrincipalClass">
    <children>
       <ToolBar layoutX="-2.0" prefHeight="40.0" prefWidth="800.0">
         <items>
@@ -31,6 +31,12 @@
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#cadastrarMaterial" text="Cadastrar" />
                   <MenuItem mnemonicParsing="false" onAction="#buscarMaterial" text="Buscar" />
+               </items>
+            </SplitMenuButton>
+            <SplitMenuButton layoutX="105.0" layoutY="10.0" mnemonicParsing="false" text="Emprestimo">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#realizarEmprestimo" text="Cadastrar" />
+                  <MenuItem mnemonicParsing="false" onAction="#buscarEmprestimo" text="Buscar" />
                </items>
             </SplitMenuButton>
          </children>
