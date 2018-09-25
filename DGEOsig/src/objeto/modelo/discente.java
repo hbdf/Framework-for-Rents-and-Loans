@@ -3,7 +3,9 @@ package objeto.modelo;
 public abstract class discente extends Pessoa{
 	String matricula;
 	public discente(String mat, String nome, String email) {
-		super(nome, email);
+		//super(nome, email);
+		setNome(nome);
+		setEmail(email);
 		matricula = mat;
 	}@Override
 	protected void finalize() throws Throwable {

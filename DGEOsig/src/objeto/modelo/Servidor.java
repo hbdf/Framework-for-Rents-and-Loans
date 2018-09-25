@@ -5,7 +5,9 @@ public class Servidor extends Pessoa{
 	String login;
 	String senha;
 	public Servidor(String matriculaSIAPE, String nome, String email, String login, String senha) {
-		super(nome, email);
+		setNome(nome);
+		setEmail(email);
+		//super(nome, email);
 		this.matriculaSIAPE = matriculaSIAPE;
 		this.login = login;
 		this.senha = senha;

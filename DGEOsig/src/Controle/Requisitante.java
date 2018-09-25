@@ -10,8 +10,8 @@ public abstract class Requisitante extends Pessoa{
 	Emprestimo historicoEmprestimo;
 	
 	public Requisitante() {
-		super(matricula, matricula);
-		
-	
+	//	super(matricula, matricula);
+		setNome(matricula);
+		setMatricula(matricula);
 	}
 }
