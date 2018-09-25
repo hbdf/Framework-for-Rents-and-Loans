@@ -1,7 +1,9 @@
 package view;
 
+import Controle.TesteController;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import objeto.modelo.Teste;
 
 public class Main extends Application
 {
@@ -12,7 +14,13 @@ public class Main extends Application
 	}
 	public static void main (String[] args) 
 	{
+		System.out.println("Criar");
+		Teste t = new Teste();
+		t.setNome("helio");
+		TesteController con = new TesteController();
+		con.salvar(t);
 		launch(args);
+	
 	}
 	
 	
