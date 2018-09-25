@@ -51,6 +51,12 @@ public class TelaPrincipalClass {
 			e.printStackTrace();
 		}
 	}
+	public void cadastrarMaterial(ActionEvent event) {
+		new TelaCadastrarMaterial().open();
+	}
+	public void buscarMaterial(ActionEvent event) {
+		new TelaBuscarMaterial().open();
+	}
 	// LOGOUT
 	public void sair(ActionEvent event){
 		Stage stage = (Stage) btnSair.getScene().getWindow(); //Obtendo a janela atual

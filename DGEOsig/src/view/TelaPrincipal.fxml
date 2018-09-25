@@ -13,8 +13,8 @@
       <ToolBar layoutX="-2.0" prefHeight="40.0" prefWidth="800.0">
         <items>
           <Button fx:id="btnSair" mnemonicParsing="false" onAction="#sair" text="Logout" />
-            <Label prefHeight="18.0" prefWidth="523.0" text="DGEOsig" />
-            <Label fx:id="lblServidor" prefHeight="18.0" prefWidth="202.0" />
+            <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="18.0" prefWidth="477.0" text="DGEOsig" />
+            <Label fx:id="lblServidor" prefHeight="18.0" />
         </items>
       </ToolBar>
       <HBox layoutX="-2.0" layoutY="40.0" prefHeight="26.0" prefWidth="800.0">
@@ -29,8 +29,8 @@
             </SplitMenuButton>
             <SplitMenuButton layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Material">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Cadastrar" />
-                  <MenuItem mnemonicParsing="false" text="Buscar" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadastrarMaterial" text="Cadastrar" />
+                  <MenuItem mnemonicParsing="false" onAction="#buscarMaterial" text="Buscar" />
                </items>
             </SplitMenuButton>
          </children>
