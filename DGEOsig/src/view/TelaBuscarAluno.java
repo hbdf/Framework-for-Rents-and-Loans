@@ -41,6 +41,10 @@ public class TelaBuscarAluno {
     void buscarAluno(ActionEvent event) {
     	String chave = tfBusca.getText(); // MATRICULA PARA A BUSCA
     	Aluno al = new CadastrarAlunoControle().busca(chave);
+    	lblCPF.setText(al.getCPF());
+    	lblEmail.setText(al.getEmail());
+    	lblMatricula.setText(al.getMatricula());
+    	lblNome.setText(al.getNome());
     	System.out.println("entrou em busca");
     	btnRemover.setOpacity(1.0); // botao remover aparece apenas quando clicado em remover
     }

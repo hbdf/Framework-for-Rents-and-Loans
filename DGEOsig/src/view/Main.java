@@ -14,11 +14,11 @@ public class Main extends Application
 	}
 	public static void main (String[] args) 
 	{
-		System.out.println("Criar");
-		Teste t = new Teste();
-		t.setNome("helio");
-		TesteController con = new TesteController();
-		con.salvar(t);
+//		System.out.println("Criar");
+//		Teste t = new Teste();
+//		t.setNome("helio");
+//		TesteController con = new TesteController();
+//		con.salvar(t);
 		launch(args);
 	
 	}
