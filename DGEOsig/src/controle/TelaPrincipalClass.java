@@ -1,5 +1,5 @@
 
-package view;
+package controle;
 
 import java.io.IOException;
 
@@ -34,7 +34,7 @@ public class TelaPrincipalClass {
 		Stage primaryStage = new Stage();
 		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/TelaPrincipal.fxml"));
 		Scene scene = new Scene (root);
-		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Tela Principal");
 		primaryStage.show();

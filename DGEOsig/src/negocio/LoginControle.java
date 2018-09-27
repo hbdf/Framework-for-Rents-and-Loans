@@ -1,11 +1,11 @@
-package Controle;
+package negocio;
 
 import java.io.IOException;
 
+import controle.TelaPrincipalClass;
+import controle.UsuarioNaoCadastradoClass;
 import objeto.modelo.LoginDAO;
 import objeto.modelo.LoginDAOSemBanco;
-import view.TelaPrincipalClass;
-import view.UsuarioNaoCadastradoClass;
 
 public class LoginControle 
 {

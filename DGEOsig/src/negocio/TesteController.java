@@ -1,4 +1,4 @@
-package Controle;
+package negocio;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

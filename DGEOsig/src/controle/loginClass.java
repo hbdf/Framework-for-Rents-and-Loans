@@ -1,7 +1,5 @@
-package view;
+package controle;
 import java.io.IOException;
-
-import Controle.LoginControle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import negocio.LoginControle;
 
 public class loginClass 
 {
@@ -49,7 +48,7 @@ public class loginClass
 			Stage primaryStage = new Stage();
 			Parent root =  FXMLLoader.load(getClass().getResource("/view/login.fxml"));
 			Scene scene = new Scene (root);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Login");
 			primaryStage.show();

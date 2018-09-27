@@ -1,11 +1,11 @@
-package view;
+package controle;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import negocio.CadastrarAlunoControle;
 import objeto.modelo.Aluno;
-import Controle.CadastrarAlunoControle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

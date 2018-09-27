@@ -1,8 +1,7 @@
-package view;
+package controle;
 
 import java.io.IOException;
 
-import Controle.CadastrarAlunoControle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import negocio.CadastrarAlunoControle;
 
 public class TelaCadastrarAluno {
 	@FXML

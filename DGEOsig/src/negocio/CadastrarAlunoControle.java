@@ -1,4 +1,4 @@
-package Controle;
+package negocio;
 
 import objeto.modelo.AlunoDAO;
 import objeto.modelo.Pessoa;
