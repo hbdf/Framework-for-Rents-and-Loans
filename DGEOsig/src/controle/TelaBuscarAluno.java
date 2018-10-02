@@ -1,21 +1,28 @@
 package controle;
 
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import negocio.CadastrarAlunoControle;
 import objeto.modelo.Aluno;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 
-public class TelaBuscarAluno {
+public class TelaBuscarAluno implements Initializable{
 
     @FXML
     private AnchorPane TelaPrincipal;
@@ -34,7 +41,10 @@ public class TelaBuscarAluno {
     @FXML
     private Button btnRemover;
     @FXML
-    private ChoiceBox<?> cbTipoBusca; // TIPO DE BUSCA // 
+    private Label lblAlertaModoBusca;
+    @FXML
+    private ComboBox<String> cbTipoBusca; // TIPO DE BUSCA // 
+    private ObservableList<String> list = FXCollections.observableArrayList("Matrícula", "CPF", "Nome");
     @FXML
     private TextField tfBusca;
     @FXML
@@ -78,5 +88,28 @@ public class TelaBuscarAluno {
 			e.printStackTrace();
 		}
 	}
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		cbTipoBusca.setItems(list);
+		cbTipoBusca.setValue("Matrícula");
+		tfBusca.setPromptText(cbTipoBusca.getValue());
+	}
+	public void tipoBuscaMudou(ActionEvent event) {
+		tfBusca.setPromptText(cbTipoBusca.getValue());
+	}
+	
+	//AINDA NAO DEFINIDA A LOGICA PARA A BUSCA POIS FALTA CRIAR AS FUNÇÕES DE BUSCA PARA CADA TIPO
+	// AINDA NAO SENDO UTILIZADA
+	private void buscarAlunoPor(ActionEvent event) {
+    	String chave = tfBusca.getText(); // MATRICULA PARA A BUSCA
+    	Aluno al = new CadastrarAlunoControle().busca(chave);
+    //	System.out.println(al.getCPF());
+    	lblCPF.setText(al.getCPF());
+    	lblEmail.setText(al.getEmail());
+    	lblMatricula.setText(al.getMatricula());
+    	lblNome.setText(al.getNome());
+    	System.out.println("entrou em busca");
+    	btnRemover.setOpacity(1.0); // botao remover aparece apenas quando clicado em remover
+    }
 
 }
