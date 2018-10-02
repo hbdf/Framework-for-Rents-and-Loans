@@ -1,4 +1,4 @@
-package negocio;
+package servico;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

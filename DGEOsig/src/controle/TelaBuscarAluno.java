@@ -5,8 +5,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import negocio.CadastrarAlunoControle;
 import objeto.modelo.Aluno;
+import servico.CadastrarAlunoControle;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -100,16 +100,18 @@ public class TelaBuscarAluno implements Initializable{
 	
 	//AINDA NAO DEFINIDA A LOGICA PARA A BUSCA POIS FALTA CRIAR AS FUNÇÕES DE BUSCA PARA CADA TIPO
 	// AINDA NAO SENDO UTILIZADA
-	private void buscarAlunoPor(ActionEvent event) {
-    	String chave = tfBusca.getText(); // MATRICULA PARA A BUSCA
-    	Aluno al = new CadastrarAlunoControle().busca(chave);
-    //	System.out.println(al.getCPF());
-    	lblCPF.setText(al.getCPF());
-    	lblEmail.setText(al.getEmail());
-    	lblMatricula.setText(al.getMatricula());
-    	lblNome.setText(al.getNome());
-    	System.out.println("entrou em busca");
-    	btnRemover.setOpacity(1.0); // botao remover aparece apenas quando clicado em remover
+	public void buscarAlunoPor(ActionEvent event) {
+    	String id = tfBusca.getText(); // ID DA BUSCA
+    	String chave = cbTipoBusca.getValue();
+    	System.out.println(chave +" "+ id);
+//    	Aluno al = new CadastrarAlunoControle().busca(chave);
+//    //	System.out.println(al.getCPF());
+//    	lblCPF.setText(al.getCPF());
+//    	lblEmail.setText(al.getEmail());
+//    	lblMatricula.setText(al.getMatricula());
+//    	lblNome.setText(al.getNome());
+//    	System.out.println("entrou em busca");
+//    	btnRemover.setOpacity(1.0); // botao remover aparece apenas quando clicado em remover
     }
 
 }

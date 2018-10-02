@@ -1,9 +1,11 @@
-package negocio;
+package servico;
 
 import objeto.modelo.AlunoDAO;
 import objeto.modelo.Pessoa;
 import objeto.modelo.Aluno;
 
+
+// PASSAR O ALUNO
 public class CadastrarAlunoControle {
 	public boolean cadastrar(String CPF, String nome, String email, String matricula) {
 		Aluno P = new Aluno(nome, matricula);

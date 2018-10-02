@@ -11,7 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import negocio.CadastrarAlunoControle;
+import servico.CadastrarAlunoControle;
 
 public class TelaCadastrarServidor {
 	@FXML

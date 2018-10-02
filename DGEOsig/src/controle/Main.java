@@ -2,8 +2,8 @@ package controle;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import negocio.TesteController;
 import objeto.modelo.Teste;
+import servico.TesteController;
 
 public class Main extends Application
 {

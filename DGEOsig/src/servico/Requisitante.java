@@ -1,4 +1,4 @@
-package negocio;
+package servico;
 
 import objeto.modelo.Pessoa;
 

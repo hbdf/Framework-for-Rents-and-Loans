@@ -38,7 +38,7 @@
          </children>
       </GridPane>
       <Label alignment="CENTER" prefHeight="40.0" prefWidth="800.0" text="Cadastrar Aluno" />
-      <Button layoutX="603.0" layoutY="40.0" mnemonicParsing="false" onAction="#buscarAluno" prefHeight="26.0" text="Buscar" />
+      <Button layoutX="603.0" layoutY="40.0" mnemonicParsing="false" onAction="#buscarAlunoPor" prefHeight="26.0" text="Buscar" />
       <Button fx:id="btnCancelar" layoutX="653.0" layoutY="530.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
       <TextField fx:id="tfBusca" layoutX="213.0" layoutY="40.0" prefHeight="26.0" prefWidth="386.0" promptText="Matricula" />
       <Button fx:id="btnRemover" layoutX="325.0" layoutY="415.0" mnemonicParsing="false" onAction="#remover" opacity="0.0" text="Remover" textFill="#db0d0d">

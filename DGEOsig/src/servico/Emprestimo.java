@@ -1,4 +1,4 @@
-package negocio;
+package servico;
 
 public class Emprestimo {
 
