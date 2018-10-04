@@ -40,10 +40,10 @@ public class TelaPrincipalClass {
 		primaryStage.show();
 		System.out.println("OK!");
 	}
-	public void buscarAluno(ActionEvent event) {
+	public void buscarUsuario(ActionEvent event) {
 		new TelaBuscarAluno().open();
 	}
-	public void CadastrarAluno(ActionEvent event) {
+	public void cadastrarUsuario(ActionEvent event) {
 		TelaCadastrarAluno cad = new TelaCadastrarAluno();
 		try {
 			cad.open();
@@ -52,14 +52,14 @@ public class TelaPrincipalClass {
 			e.printStackTrace();
 		}
 	}
-	public void cadastrarMaterial(ActionEvent event) {
+	public void cadastrarFerramenta(ActionEvent event) {
 		new TelaCadastrarMaterial().open();
 	}
-	public void buscarMaterial(ActionEvent event) {
+	public void buscarFerramenta(ActionEvent event) {
 		new TelaBuscarMaterial().open();
 	}
 	@FXML
-    void realizarEmprestimo(ActionEvent event) {
+    void cadastrarEmprestimo(ActionEvent event) {
 		new TelaRealizarEmprestimo().open();
     }
 	@FXML

@@ -6,34 +6,26 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import servico.LoginControle;
+import servico.Login;
 
-public class loginClass 
+public class LoginController 
 {
 
-	LoginControle lg = new LoginControle();
+	Login lg = new Login();
     @FXML
-    private TextField login;
+    private TextField tfUsername;
 
     @FXML
-    private PasswordField senha;
+    private PasswordField tfPassword;
     
-    @FXML
-    private Label logo;
-
-    @FXML
-    private Button start;
-
     @FXML
     void start(ActionEvent event) 
     {
     	try {
-			if(lg.PodeEntrar(login.getText(), senha.getText()))
+			if(lg.PodeEntrar(tfUsername.getText(), tfPassword.getText()))
 			{
 				this.close();
 			}
@@ -46,11 +38,11 @@ public class loginClass
 		
 		try {
 			Stage primaryStage = new Stage();
-			Parent root =  FXMLLoader.load(getClass().getResource("/view/login.fxml"));
+			Parent root =  FXMLLoader.load(getClass().getResource("/view2/Login.fxml"));
 			Scene scene = new Scene (root);
-			scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
+			//scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Login");
+			primaryStage.setTitle("DGEOsig");
 			primaryStage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -59,7 +51,7 @@ public class loginClass
 	}
     void close ()
     {
-    	Stage stage = (Stage) start.getScene().getWindow(); //Obtendo a janela atual
+    	Stage stage = (Stage) tfUsername.getScene().getWindow(); //Obtendo a janela atual
     	System.out.println("Sai Login");
 	    stage.close();
     }

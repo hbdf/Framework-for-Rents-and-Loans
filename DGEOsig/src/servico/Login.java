@@ -7,7 +7,7 @@ import controle.UsuarioNaoCadastradoClass;
 import objeto.modelo.LoginDAO;
 import objeto.modelo.LoginDAOSemBanco;
 
-public class LoginControle 
+public class Login 
 {
 	public boolean PodeEntrar (String usuario, String senha) throws IOException
 	{
