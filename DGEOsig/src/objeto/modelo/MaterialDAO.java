@@ -9,6 +9,7 @@ public class MaterialDAO {
 	public MaterialDAO() {
 		listaMaterial = new HashMap<>();
 	}
+	
 	public boolean cadastrarlistaMaterial(String novoMaterial) {
 		if(this.listaMaterial.containsKey(novoMaterial)){
 			//this.listaMaterial.put(novoMaterial, );
@@ -16,11 +17,13 @@ public class MaterialDAO {
 		}else
 			return false;
 	}
+	
 	public boolean contem(String obj){
 		if(!this.listaMaterial.containsKey(obj)){
 			return false;
 		}return true;
 	}
+	
 	public boolean remove(String obj){
 		if(this.contem(obj)) {
 			this.listaMaterial.remove(obj);
