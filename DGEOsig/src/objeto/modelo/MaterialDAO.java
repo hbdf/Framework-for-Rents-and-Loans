@@ -3,22 +3,28 @@ package objeto.modelo;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 public class MaterialDAO {
-	Map<String, Material> listaMaterial; //a ser definido
+	
+	EntityManagerFactory emf;
+	EntityManager em;
 	
 	public MaterialDAO() {
-		listaMaterial = new HashMap<>();
+		emf = Persistence.createEntityManagerFactory("banco");
+		em = emf.createEntityManager();
 	}
 	
-	public boolean cadastrarlistaMaterial(String novoMaterial) {
-		if(this.listaMaterial.containsKey(novoMaterial)){
-			//this.listaMaterial.put(novoMaterial, );
-			return true;
-		}else
-			return false;
+	public void cadastrar(Material material) {
+		em.getTransaction().begin();
+		em.merge(material);
+		em.getTransaction().commit();
+		emf.close();
 	}
 	
-	public boolean contem(String obj){
+/*	public boolean contem(String obj){
 		if(!this.listaMaterial.containsKey(obj)){
 			return false;
 		}return true;
@@ -30,5 +36,5 @@ public class MaterialDAO {
 			return true;
 		}
 		return false;
-	}
+	}*/
  }

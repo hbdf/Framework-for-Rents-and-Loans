@@ -21,21 +21,11 @@ public class Material {
 	String descricao;
 	@Column
 	int quantidade;
-	
 	public Material () {}
+	public Material (String id) {
+		this.id = id;
+	}
 	
-	public Material(String id, String nome) {
-		this.id = id;
-		this.nome = nome;
-		quantidade++;
-	}
-	public Material(String nome, String id, String serial, String descricao, int quantidade) {
-		this.nome = nome;
-		this.id = id;
-		this.serial = serial;
-		this.descricao = descricao;
-		this.quantidade = quantidade;
-	}
 	public String get_nome() {
 		return nome;
 	}

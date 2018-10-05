@@ -10,6 +10,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import objeto.modelo.Material;
 import servico.CadastrarMaterialControle;
 
 public class TelaCadastrarMaterial {
@@ -35,8 +36,12 @@ public class TelaCadastrarMaterial {
     	String serie = tfSerie.getText();
     	String descricao = taDescricao.getText();
     	
-    	new CadastrarMaterialControle().cadastrar(nome, numeroTombamento, serie, descricao);
-    	
+    	Material material = new Material(numeroTombamento);
+    	material.set_nome(nome);
+    	material.set_serial(serie);
+    	material.set_descricao(descricao);
+    	CadastrarMaterialControle cadastrar = new CadastrarMaterialControle();
+    	cadastrar.cadastrar(material);
     	//close
     	this.close();
     }

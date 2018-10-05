@@ -47,7 +47,7 @@ public class TelaBuscarMaterial {
     @FXML
     void buscarMaterial(ActionEvent event) {
     	String chave = tfBusca.getText();
-    	Material m = new CadastrarMaterialControle().busca(chave);
+   // 	Material m = new CadastrarMaterialControle().busca(chave);
     	
     	btnRemover.setOpacity(1.0);
     }
@@ -59,7 +59,7 @@ public class TelaBuscarMaterial {
 
     @FXML
     void remover(ActionEvent event) {
-    	new CadastrarMaterialControle().remover(tfBusca.getText());
+//    	new CadastrarMaterialControle().remover(tfBusca.getText());
     	this.close();
     }
     private void close() {
