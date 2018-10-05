@@ -50,18 +50,6 @@ public class TelaBuscarAluno implements Initializable{
     private ObservableList<String> list = FXCollections.observableArrayList("Matrícula", "CPF", "Nome");
     @FXML
     private TextField tfBusca;
- /*   @FXML
-    void buscarAluno(ActionEvent event) {
-    	String chave = tfBusca.getText(); // MATRICULA PARA A BUSCA
-    	Aluno al = new CadastrarAlunoControle().busca(chave);
-    //	System.out.println(al.getCPF());
-    	lblCPF.setText(al.getCPF());
-    	lblEmail.setText(al.getEmail());
-    	lblMatricula.setText(al.getMatricula());
-    	lblNome.setText(al.getNome());
-    	System.out.println("entrou em busca");
-    	btnRemover.setOpacity(1.0); // botao remover aparece apenas quando clicado em remover
-    } */
     @FXML 
     void remover(ActionEvent event){
     	
@@ -101,8 +89,7 @@ public class TelaBuscarAluno implements Initializable{
 		tfBusca.setPromptText(cbTipoBusca.getValue());
 	}
 	
-	//AINDA NAO DEFINIDA A LOGICA PARA A BUSCA POIS FALTA CRIAR AS FUNÇÕES DE BUSCA PARA CADA TIPO
-	// AINDA NAO SENDO UTILIZADA
+	//TODO Buscar por todas as coisas (cpf/nome/etc)	
 	public void buscarAlunoPor(ActionEvent event) {
     	String id = tfBusca.getText(); // ID DA BUSCA
     	String chave = cbTipoBusca.getValue();
