@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="usuario")
 public class Usuario {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -24,7 +23,7 @@ public class Usuario {
 	@Column
 	public String tipo;
 	
-	Usuario () {}
+	public Usuario () {}
 	
 	public String get_cpf() {
 		return cpf;

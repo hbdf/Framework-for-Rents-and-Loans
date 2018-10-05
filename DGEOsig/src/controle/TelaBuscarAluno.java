@@ -6,9 +6,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import objeto.modelo.Aluno;
+import objeto.modelo.Usuario;
 import servico.CadastrarAlunoControle;
+import servico.UsuarioControle;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -47,7 +50,7 @@ public class TelaBuscarAluno implements Initializable{
     private ObservableList<String> list = FXCollections.observableArrayList("Matrícula", "CPF", "Nome");
     @FXML
     private TextField tfBusca;
-    @FXML
+ /*   @FXML
     void buscarAluno(ActionEvent event) {
     	String chave = tfBusca.getText(); // MATRICULA PARA A BUSCA
     	Aluno al = new CadastrarAlunoControle().busca(chave);
@@ -58,10 +61,10 @@ public class TelaBuscarAluno implements Initializable{
     	lblNome.setText(al.getNome());
     	System.out.println("entrou em busca");
     	btnRemover.setOpacity(1.0); // botao remover aparece apenas quando clicado em remover
-    }
-    @FXML void remover(ActionEvent event){
-    	String chave = tfBusca.getText(); // MATRICULA PARA A REMOÇÃO
-    	new CadastrarAlunoControle().removerAluno(chave);
+    } */
+    @FXML 
+    void remover(ActionEvent event){
+    	
     	System.out.println("Removeu");
     	
     	this.close();
@@ -103,15 +106,22 @@ public class TelaBuscarAluno implements Initializable{
 	public void buscarAlunoPor(ActionEvent event) {
     	String id = tfBusca.getText(); // ID DA BUSCA
     	String chave = cbTipoBusca.getValue();
-    	System.out.println(chave +" "+ id);
-//    	Aluno al = new CadastrarAlunoControle().busca(chave);
-//    //	System.out.println(al.getCPF());
-//    	lblCPF.setText(al.getCPF());
-//    	lblEmail.setText(al.getEmail());
-//    	lblMatricula.setText(al.getMatricula());
-//    	lblNome.setText(al.getNome());
-//    	System.out.println("entrou em busca");
-//    	btnRemover.setOpacity(1.0); // botao remover aparece apenas quando clicado em remover
+    	
+    	if(chave.equals("Matrícula")) {
+    		UsuarioControle usuarioControle = new UsuarioControle();
+    		List<Usuario> list = usuarioControle.buscar_matricula(id);
+    		if(list.isEmpty()) {
+    			System.out.println("Lista vazia");
+    			//TODO LANÇAR exception
+    		} else {
+    			Usuario first = list.get(0);
+    			lblCPF.setText(first.get_cpf());
+    	    	lblEmail.setText(first.get_email());
+    	    	lblMatricula.setText(first.get_matricula());
+    	    	lblNome.setText(first.get_nome());
+    	    	btnRemover.setOpacity(1.0); // botao remover aparece apenas quando clicado em remover
+    		}
+    	}
     }
 
 }

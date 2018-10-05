@@ -26,7 +26,7 @@ public class UsuarioDAO {
 	
 	public List<Usuario> buscar_matricula(String matricula) {
 		em.getTransaction().begin();
-		Query q =  em.createQuery("select usuario from usuario usuario where matricula = " + matricula);
+		Query q =  em.createQuery("select usuario from Usuario usuario where matricula = " + matricula);
 		List<Usuario> l = q.getResultList();
 		em.getTransaction().commit();
 		emf.close();

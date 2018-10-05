@@ -11,7 +11,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import objeto.modelo.Usuario;
 import servico.CadastrarAlunoControle;
+import servico.UsuarioControle;
 
 public class TelaCadastrarAluno {
 	@FXML
@@ -40,15 +42,18 @@ public class TelaCadastrarAluno {
 	
 	@FXML
 	public void cadastrar (ActionEvent event) {
-		CadastrarAlunoControle cad = new CadastrarAlunoControle();
-		boolean x = cad.cadastrar(CPFCadastrar.getText(), NomeCadastrar.getText(), EmailCadastrar.getText(), MatriculaCadastrar.getText());
-		System.out.println(CPFCadastrar.getText()+" "+ NomeCadastrar.getText()+" "+ EmailCadastrar.getText()+" "+ MatriculaCadastrar.getText());
-		if(x) {
-			Stage stage = (Stage) Cadastrar.getScene().getWindow(); //Obtendo a janela atual
-		    stage.close();
-		} else {
-			
-		}
+		Usuario usuario = new Usuario();
+		usuario.set_cpf(CPFCadastrar.getText());
+		usuario.set_email(EmailCadastrar.getText());
+		usuario.set_nome(NomeCadastrar.getText());
+		usuario.set_matricula(MatriculaCadastrar.getText());
+		usuario.set_tipo("Aluno");
+		
+		UsuarioControle usuarioControle = new UsuarioControle();
+		usuarioControle.cadastrar(usuario);
+		Stage stage = (Stage) Cadastrar.getScene().getWindow(); //Obtendo a janela atual
+	    stage.close();
+		
 	}
 	@FXML
     void cancelar(ActionEvent event) {
