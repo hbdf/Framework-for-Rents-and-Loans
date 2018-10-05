@@ -14,7 +14,7 @@ public class AlunoDAO {
 	EntityManager em;
 	
 	public  AlunoDAO() {
-		emf = Persistence.createEntityManagerFactory("aluno");
+		emf = Persistence.createEntityManagerFactory("banco");
 		em = emf.createEntityManager();
 	}
 	public void cadastrar(Aluno a) {
