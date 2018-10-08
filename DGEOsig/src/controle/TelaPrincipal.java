@@ -14,7 +14,8 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class TelaPrincipalClass {
+
+public class TelaPrincipal {
 	
 	String usuario;
 	
@@ -28,21 +29,23 @@ public class TelaPrincipalClass {
     private Button btnSair;
 
 
-	public void open() throws IOException 
-	{	
-
-		Stage primaryStage = new Stage();
+	public void open() throws IOException {	
+		
 		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/TelaPrincipal.fxml"));
 		Scene scene = new Scene (root);
 		scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
+		
+		Stage primaryStage = new Stage();
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Tela Principal");
 		primaryStage.show();
 		System.out.println("OK!");
 	}
+	
 	public void buscarUsuario(ActionEvent event) {
 		new TelaBuscarAluno().open();
 	}
+	
 	public void cadastrarUsuario(ActionEvent event) {
 		TelaCadastrarAluno cad = new TelaCadastrarAluno();
 		try {
@@ -52,16 +55,20 @@ public class TelaPrincipalClass {
 			e.printStackTrace();
 		}
 	}
+	
 	public void cadastrarFerramenta(ActionEvent event) {
 		new TelaCadastrarMaterial().open();
 	}
+	
 	public void buscarFerramenta(ActionEvent event) {
 		new TelaBuscarMaterial().open();
 	}
+	
 	@FXML
     void cadastrarEmprestimo(ActionEvent event) {
 		new TelaRealizarEmprestimo().open();
     }
+	
 	@FXML
     void buscarEmprestimo(ActionEvent event) {
 		System.out.println("Busca Emprestimo!");
