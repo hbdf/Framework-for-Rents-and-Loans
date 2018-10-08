@@ -39,7 +39,7 @@ public class UsuarioDAO {
 			return false;
 		}
 		em.getTransaction().begin();
-		Query q = em.createNativeQuery("DELETE Aluno FROM Aluno WHERE matricula = " + matricula);
+		Query q = em.createNativeQuery("DELETE Usuario FROM Usuario WHERE matricula = " + matricula);
 		q.executeUpdate();
 		em.getTransaction().commit();
 		emf.close();

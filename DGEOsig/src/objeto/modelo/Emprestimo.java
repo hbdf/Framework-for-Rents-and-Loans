@@ -1,5 +1,7 @@
 package objeto.modelo;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,8 +23,28 @@ public class Emprestimo {
 	Material material;
 	@Column
 	int quantidade;
+	@Column
+	Date inicio;
+	@Column
+	int prazo;
 	
 	public Emprestimo () {}
+
+	public int get_prazo() {
+		return prazo;
+	}
+
+	public void set_prazo(int prazo) {
+		this.prazo = prazo;
+	}
+
+	public Date get_inicio() {
+		return inicio;
+	}
+	
+	public void set_inicio(Date inicio) {
+		this.inicio = inicio;
+	}
 
 	public int get_id() {
 		return id;

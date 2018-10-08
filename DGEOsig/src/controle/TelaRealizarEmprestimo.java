@@ -38,7 +38,7 @@ public class TelaRealizarEmprestimo {
 
     @FXML
     void realizarEmprestimo(ActionEvent event) {
-    	System.out.println("Emprestimo Realizado!");
+    	
     	
     	this.close();
     }
