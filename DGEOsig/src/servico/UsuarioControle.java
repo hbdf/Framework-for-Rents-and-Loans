@@ -11,6 +11,10 @@ public class UsuarioControle {
 	 */
 	public void cadastrar(Usuario usuario) {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		if(usuarioDAO.buscar_matricula(usuario.get_matricula()).size() > 0) {
+			System.out.println("Não eh possivle inserir com mesma matricula");
+			return;
+		}
 		usuarioDAO.cadastrar(usuario);
 	}
 	public List<Usuario> buscar_matricula(String matricula) {

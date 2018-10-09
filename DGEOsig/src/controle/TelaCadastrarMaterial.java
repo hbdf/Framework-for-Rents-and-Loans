@@ -20,6 +20,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import objeto.modelo.Material;
 import servico.MaterialControle;
+import sun.security.jca.GetInstance;
 
 
 public class TelaCadastrarMaterial implements Initializable {
@@ -64,13 +65,9 @@ public class TelaCadastrarMaterial implements Initializable {
 		Material material = new Material(Integer.parseInt(toolId));
 		material.set_descricao(toolDescricao);
 		material.set_nome(toolTipo);
-		MaterialControle materialControle = new MaterialControle();
+		MaterialControle materialControle = MaterialControle.getInstance();
 		materialControle.cadastrar(material);
-		// Uma Ferramenta sempre deve ser cadastrada como isDisponivel = 'true'.
-//		Material ferramenta = new Material(toolId, toolTipo, toolDescricao, true); 
-//		
-//		FerramentaDAO dao = new FerramentaDAO();		
-//		dao.createFerramenta(ferramenta);
+		this.close();
     }	
 
     private void initComboBoxTipos() {

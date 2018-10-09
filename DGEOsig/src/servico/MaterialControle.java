@@ -3,12 +3,23 @@ package servico;
 import objeto.modelo.Material;
 import objeto.modelo.MaterialDAO;
 
-public class MaterialControle {
+public final class MaterialControle {
+	private static MaterialControle instance;
+	public static MaterialControle getInstance() {
+		if(instance == null) {
+			instance = new MaterialControle();
+		}
+		return instance;
+	}
 	public void cadastrar(Material material) {
 		MaterialDAO materialDAO = new MaterialDAO();
+		if(materialDAO.buscar_id(material.get_id()).size() > 0) {
+			System.out.println("Não é possível cadastrar com mesmo id");
+			return;
+		}
 		materialDAO.cadastrar(material);
 	}
-	public Material buscar_id(String id) {
+	public Material buscar_id(int id) {
 		MaterialDAO materialDAO = new MaterialDAO();
 		//TODO THROWS
 		return materialDAO.buscar_id(id).get(0);

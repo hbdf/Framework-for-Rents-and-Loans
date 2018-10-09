@@ -26,7 +26,7 @@ public class MaterialDAO {
 		emf.close();
 	}
 	
-	public List<Material> buscar_id(String id) {
+	public List<Material> buscar_id(int id) {
 		em.getTransaction().begin();
 		Query q =  em.createQuery("select material from Material material where id = " + id);
 		List<Material> l = q.getResultList();

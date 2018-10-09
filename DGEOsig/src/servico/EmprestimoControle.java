@@ -33,7 +33,7 @@ public class EmprestimoControle {
 		List<Usuario> lst_usuario = usuario_controle.buscar_matricula(usuario_id);
 		usuario = lst_usuario.get(0);
 		MaterialControle material_controle = new MaterialControle();
-		material = material_controle.buscar_id(material_id);
+		material = material_controle.buscar_id(Integer.parseInt(material_id));
 		if(usuario.tipo == "Aluno" && emprestimoDAO.get_por_id_usuario(usuario.get_id()) > 0) {
 			System.out.println("O usuario não pode fazer emprestimo");
 			return;
