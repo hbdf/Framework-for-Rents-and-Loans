@@ -53,7 +53,7 @@ public class TelaBuscarAluno implements Initializable{
     @FXML 
     void remover(ActionEvent event){
     	
-    	System.out.println("Removeu");
+    //	UsuarioControle usuarioControle = new UsuarioControle();
     	
     	this.close();
     }
@@ -97,6 +97,20 @@ public class TelaBuscarAluno implements Initializable{
     	if(chave.equals("Matrícula")) {
     		UsuarioControle usuarioControle = new UsuarioControle();
     		List<Usuario> list = usuarioControle.buscar_matricula(id);
+    		if(list.isEmpty()) {
+    			System.out.println("Lista vazia");
+    			//TODO LANÇAR exception
+    		} else {
+    			Usuario first = list.get(0);
+    			lblCPF.setText(first.get_cpf());
+    	    	lblEmail.setText(first.get_email());
+    	    	lblMatricula.setText(first.get_matricula());
+    	    	lblNome.setText(first.get_nome());
+    	    	btnRemover.setOpacity(1.0); // botao remover aparece apenas quando clicado em remover
+    		}
+    	} else if(chave.equals("CPF")) {
+    		UsuarioControle usuarioControle = new UsuarioControle();
+    		List<Usuario> list = usuarioControle.buscar_CPF(id);
     		if(list.isEmpty()) {
     			System.out.println("Lista vazia");
     			//TODO LANÇAR exception
