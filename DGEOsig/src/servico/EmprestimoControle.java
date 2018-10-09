@@ -53,5 +53,8 @@ public class EmprestimoControle {
 		emprestimo.set_prazo(prazo);
 		emprestimo.set_usuario(usuario);
 		emprestimoDAO.cadastrar(emprestimo);
+		
+		// enviando um email comprovante
+		new Email(usuario, material, "Emprestimo");
 	}
 }
