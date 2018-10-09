@@ -2,7 +2,7 @@ package servico;
 
 import java.io.IOException;
 
-import controle.TelaPrincipalClass;
+import controle.TelaPrincipal;
 import controle.UsuarioNaoCadastradoClass;
 import objeto.modelo.LoginDAO;
 import objeto.modelo.LoginDAOSemBanco;
@@ -14,7 +14,7 @@ public class Login
 		LoginDAO veri = new LoginDAOSemBanco();
 		if (veri.temUsuario(usuario) && veri.getSenha(usuario).equals(senha))
 		{
-			TelaPrincipalClass MainScreen = new TelaPrincipalClass();
+			TelaPrincipal MainScreen = new TelaPrincipal();
 			MainScreen.open();
 			return true;
 		}
