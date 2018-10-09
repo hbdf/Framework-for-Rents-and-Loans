@@ -53,8 +53,23 @@ public class TelaBuscarAluno implements Initializable{
     @FXML 
     void remover(ActionEvent event){
     	
-    //	UsuarioControle usuarioControle = new UsuarioControle();
+    	String id = tfBusca.getText(); // ID DA BUSCA
+    	String chave = cbTipoBusca.getValue();
     	
+    	if(chave.equals("Matrícula")) {
+    		UsuarioControle usuarioControle = new UsuarioControle();
+    		List<Usuario> list = usuarioControle.buscar_matricula(id);
+    		Usuario first = list.get(0);
+    		usuarioControle.remover_matricula(first.get_matricula());
+
+    	} else if(chave.equals("CPF")) {
+    		UsuarioControle usuarioControle = new UsuarioControle();
+    		List<Usuario> list = usuarioControle.buscar_CPF(id);
+    		Usuario first = list.get(0);
+    		usuarioControle.remover_matricula(first.get_matricula());
+    	}
+		
+
     	this.close();
     }
 
