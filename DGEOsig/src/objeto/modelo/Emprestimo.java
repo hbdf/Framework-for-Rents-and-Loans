@@ -31,6 +31,13 @@ public class Emprestimo {
 	
 	public Emprestimo () {}
 
+	public Emprestimo (Usuario usuario, Material material, int quantidade, Date inicio, int prazo) {
+		this.usuario = usuario;
+		this.material = material;
+		this.quantidade = quantidade;
+		this.inicio = inicio;
+		this.prazo = prazo;
+	}
 	public int get_prazo() {
 		return prazo;
 	}
