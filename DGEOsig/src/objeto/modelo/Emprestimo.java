@@ -15,11 +15,9 @@ public class Emprestimo {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	@ManyToMany
-	@JoinColumn
+	/*@Column
 	Usuario usuario;
-	@ManyToMany
-	@JoinColumn
+	@Column
 	Material material;
 	@Column
 	int quantidade;
@@ -77,5 +75,5 @@ public class Emprestimo {
 	public void set_quantidade(int quantidade_material) {
 		this.quantidade = quantidade_material;
 	}
-	
+	*/
 }

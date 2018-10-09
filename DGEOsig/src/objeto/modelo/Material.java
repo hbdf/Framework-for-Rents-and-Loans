@@ -2,34 +2,35 @@ package objeto.modelo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 
 
 @Entity
-@Table(name="material")
 public class Material {
-	
+	@Id
+	@Column
+	private int id; // numero de tombamento
 	@Column
 	String nome;
-	@Id
-	String id; // numero de tombamento
 	@Column
 	String serial; 
 	@Column
 	String descricao;
 	@Column
 	int quantidade;
+	
 	public Material () {}
-	public Material (String id) {
+	public Material (int id) {
 		this.id = id;
 	}
 	
 	public String get_nome() {
 		return nome;
 	}
-	public String get_id() {
+	public int get_id() {
 		return id;
 	}
 	public String get_serial() {

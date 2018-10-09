@@ -36,7 +36,7 @@ public class TelaCadastrarMaterial {
     	String serie = tfSerie.getText();
     	String descricao = taDescricao.getText();
     	
-    	Material material = new Material(numeroTombamento);
+    	Material material = new Material(Integer.parseInt(numeroTombamento));
     	material.set_nome(nome);
     	material.set_serial(serie);
     	material.set_descricao(descricao);
