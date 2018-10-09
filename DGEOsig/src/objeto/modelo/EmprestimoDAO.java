@@ -45,4 +45,12 @@ public class EmprestimoDAO {
 		}
 		return ans;
 	}
+	public List<Emprestimo> get_emprestimos() {
+		em.getTransaction().begin();
+		Query q =  em.createQuery("select emprestimo from Emprestimo emprestimo");
+		List<Emprestimo> l = q.getResultList();
+		em.getTransaction().commit();
+		emf.close();
+		return l;
+	}
 }
