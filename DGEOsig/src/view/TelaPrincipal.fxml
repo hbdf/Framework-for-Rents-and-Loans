@@ -47,7 +47,7 @@
 			<right>
 				<VBox prefHeight="525.0" prefWidth="192.0" BorderPane.alignment="CENTER">
 					<children>
-						<JFXButton fx:id="registrarEmprestimoBtn" contentDisplay="TOP" onAction="#loadRegistrarEmprestimo" prefHeight="180.0" prefWidth="190.0" styleClass="setup-button" stylesheets="@main.css" text="Registrar Empréstimo">
+						<JFXButton fx:id="registrarEmprestimoBtn" contentDisplay="TOP" onAction="#loadRegistrarEmprestimo" prefHeight="180.0" prefWidth="190.0" styleClass="setup-button" stylesheets="@main.css" text="Realizar Empréstimo">
 							<graphic>
 								<ImageView fitHeight="34.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
 									<image>

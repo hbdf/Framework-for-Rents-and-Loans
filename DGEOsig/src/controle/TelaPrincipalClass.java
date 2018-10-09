@@ -141,7 +141,7 @@ public class TelaPrincipalClass implements Initializable {
 	
 	@FXML
     void loadRegistrarEmprestimo(ActionEvent event) {
-		new TelaRealizarEmprestimo().open();
+		loadWindow("Realizar Empréstimo", "src/view/TelaRealizarEmprestimo.fxml"); 
     }
 	
 	@FXML

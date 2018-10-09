@@ -1,71 +1,73 @@
 package controle;
 
-import java.util.Stack;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextField;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import servico.EmprestimoControle;
 
-public class TelaRealizarEmprestimo {
+
+public class TelaRealizarEmprestimo implements Initializable{
+
+	@FXML
+    private AnchorPane rootPane;
 
     @FXML
-    private AnchorPane TelaPrincipal;
+    private Label exitLabel;
+    @FXML
+    private JFXTextField matriculaTxt;
+    @FXML
+    private JFXTextField idTxt;
+    @FXML
+    private JFXTextField qtdTxt;
 
     @FXML
-    private TextField tfMatricula;
+    private JFXTextArea descricaoTxtArea;
 
     @FXML
-    private TextField tfTombamento;
+    private JFXButton confirmarBtn;
+    @FXML
+    private JFXButton cancelBtn;
+
+   
+    @Override
+	public void initialize(URL location, ResourceBundle resources) {
+    	
+	}
 
     @FXML
-    private TextArea taObservacao;
-
-    @FXML
-    private TextField tfQuantidade;
-
-    @FXML
-    private Button btnCadastrar;
-
-    @FXML
-    private Button btnCancelar;
-
-    @FXML
-    void realizarEmprestimo(ActionEvent event) {
+    void confirmarEmprestimo(ActionEvent event) {
+    	
     	EmprestimoControle emprestimoControle = new EmprestimoControle();
-    	emprestimoControle.cadastrar(tfMatricula.getText(), tfTombamento.getText(), 15, Integer.parseInt(tfQuantidade.getText()));
+    	emprestimoControle.cadastrar(matriculaTxt.getText(), idTxt.getText(), 15, Integer.parseInt(qtdTxt.getText()));
     	
     	this.close();
     }
 
     @FXML
     void cancelar(ActionEvent event) {
-    	this.close();
+    	close();
+    }
+    
+    
+    @FXML
+    void exitAction(MouseEvent event) {
+    	close();
     }
     
     private void close() {
-		Stage stage = (Stage) btnCancelar.getScene().getWindow();
+		Stage stage = (Stage) cancelBtn.getScene().getWindow();
 		stage.close();
-	}
-
-    public void open() {
-	   try {
-		   Parent root = FXMLLoader.load(getClass().getResource("/view/TelaRealizarEmprestimo.fxml"));
-		   Scene scene = new Scene(root);
-		   Stage stage = new Stage();
-		   stage.setScene(scene);
-		   stage.setTitle("Realizar Emprestimo");
-		   stage.show();
-	   } catch (Exception e) {
-		   e.printStackTrace();
-	   }
-   }
-
+    }
+	
 }
