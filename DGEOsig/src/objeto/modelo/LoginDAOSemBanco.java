@@ -5,8 +5,10 @@ import java.util.Map;
 
 public class LoginDAOSemBanco implements LoginDAO
 {
+	
 	Map <String, String> banco = new HashMap();
 	boolean jaPopulou = false; 
+	
 	private void Popular ()
 	{
 		if (jaPopulou)

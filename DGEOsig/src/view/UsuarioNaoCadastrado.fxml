@@ -2,14 +2,13 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="299.0" prefWidth="393.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.TelaAlertaErro">
+<AnchorPane prefHeight="299.0" prefWidth="393.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.UsuarioNaoCadastradoClass">
    <children>
       <Pane prefHeight="200.0" prefWidth="269.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -24,7 +23,7 @@
             </Pane>
             <VBox alignment="CENTER" layoutY="57.0" prefHeight="244.0" prefWidth="393.0" style="-fx-background-color: CCC9BF;">
                <children>
-                  <Label fx:id="mensagemLabel" text="  ">
+                  <Label text="Usuário Não Cadastrado!">
                      <font>
                         <Font name="System Bold Italic" size="20.0" />
                      </font>
@@ -32,7 +31,7 @@
                         <Insets bottom="20.0" top="20.0" />
                      </VBox.margin>
                   </Label>
-                  <JFXButton fx:id="okButton" buttonType="RAISED" onAction="#okButtonAction" prefWidth="160.0" style="-fx-background-radius: 15; -fx-background-color: #75ADA3;" text="OK" textFill="#f8f8f8">
+                  <JFXButton fx:id="okButton" onAction="#okButtonAction" prefWidth="160.0" style="-fx-background-radius: 15; -fx-background-color: #75ADA3;" text="OK" textFill="#f8f8f8">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -42,9 +41,6 @@
                      <padding>
                         <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                      </padding>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
                   </JFXButton>
                </children>
             </VBox>

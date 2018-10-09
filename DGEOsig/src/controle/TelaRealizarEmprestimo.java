@@ -49,12 +49,13 @@ public class TelaRealizarEmprestimo {
     void cancelar(ActionEvent event) {
     	this.close();
     }
-   private void close() {
+    
+    private void close() {
 		Stage stage = (Stage) btnCancelar.getScene().getWindow();
 		stage.close();
 	}
 
-public void open() {
+    public void open() {
 	   try {
 		   Parent root = FXMLLoader.load(getClass().getResource("/view/TelaRealizarEmprestimo.fxml"));
 		   Scene scene = new Scene(root);
@@ -64,7 +65,7 @@ public void open() {
 		   stage.show();
 	   } catch (Exception e) {
 		   e.printStackTrace();
-	}
+	   }
    }
 
 }

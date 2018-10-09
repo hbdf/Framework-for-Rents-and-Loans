@@ -1,69 +1,91 @@
 package controle;
 import java.io.IOException;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import servico.LoginControle;
 
-public class TelaLogin 
-{
 
-	LoginControle lg = new LoginControle();
-    @FXML
-    private TextField tfUsername;
+public class TelaLogin {
 
+	LoginControle login = new LoginControle(); 
+	
+	@FXML
+	private Label exitLabel;
+	
     @FXML
-    private PasswordField tfPassword;
-
+    private JFXTextField usernameTxt;
     @FXML
-    void start(ActionEvent event) 
-    {
+    private JFXPasswordField passwordField;
+    
+    @FXML
+    private JFXButton entrarBtn;
+    @FXML
+    private JFXButton cancelarBtn;
+    
+    @FXML
+    private Hyperlink esqueceuLink;    
+   
+    @FXML
+    void open() {
+    	
     	try {
-			if(lg.PodeEntrar(tfUsername.getText(), tfPassword.getText()))
-			{
-				new TelaPrincipalClass().open();
-				this.close();
-			}
-			else 
-			{
-				// tela de alerta com mensagem de erro.
-				TelaAlertaErro erro = new TelaAlertaErro("Usuario ou senha incorreto!");
-				erro.open();
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-    }
-    @FXML
-    void exit(ActionEvent event) {
-    	this.close();
-    }
-    public void open()  
-	{
-		
-		try {
-			Stage primaryStage = new Stage();
 			Parent root =  FXMLLoader.load(getClass().getResource("/view/Login.fxml"));
+			
 			Scene scene = new Scene (root);
-			//scene.getStylesheets().add(getClass().getResource("/view2/application.css").toExternalForm());
+			
+			Stage primaryStage = new Stage();
+			primaryStage.initStyle(StageStyle.UNDECORATED);
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Login");
 			primaryStage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-	}
-    void close ()
-    {
-    	Stage stage = (Stage) tfUsername.getScene().getWindow(); //Obtendo a janela atual
-    	System.out.println("Sai Login");
+    }
+    
+    @FXML
+    void entrar(ActionEvent event) {
+    	
+    	try {
+			if(login.PodeEntrar(usernameTxt.getText(), passwordField.getText())) {
+				this.close();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+
+    @FXML
+    void esqueceuAction(ActionEvent event) {
+    	System.out.println("Feature ainda não adicionada!");
+    }
+	
+    @FXML
+    void exitLabelAction(MouseEvent event) {
+		close();
+    }
+    
+    @FXML
+    void cancelarAction(ActionEvent event) {
+    	close();
+    }
+    
+    void close () {
+    	
+    	Stage stage = (Stage) entrarBtn.getScene().getWindow(); //Obtendo a janela atual
+    	System.out.println("fechando Login ...");
 	    stage.close();
     }
     
