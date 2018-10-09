@@ -12,6 +12,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import servico.EmprestimoControle;
 
 public class TelaRealizarEmprestimo {
 
@@ -38,7 +39,8 @@ public class TelaRealizarEmprestimo {
 
     @FXML
     void realizarEmprestimo(ActionEvent event) {
-    	
+    	EmprestimoControle emprestimoControle = new EmprestimoControle();
+    	emprestimoControle.cadastrar(tfMatricula.getText(), tfTombamento.getText(), 15, Integer.parseInt(tfQuantidade.getText()));
     	
     	this.close();
     }

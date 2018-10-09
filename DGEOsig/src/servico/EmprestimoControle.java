@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import objeto.modelo.Emprestimo;
+import objeto.modelo.EmprestimoDAO;
 import objeto.modelo.Material;
 import objeto.modelo.Usuario;
 
@@ -28,5 +29,7 @@ public class EmprestimoControle {
 		emprestimo.set_quantidade(quantidade);
 		emprestimo.set_prazo(prazo);
 		emprestimo.set_usuario(usuario);
+		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
+		emprestimoDAO.cadastrar(emprestimo);
 	}
 }
