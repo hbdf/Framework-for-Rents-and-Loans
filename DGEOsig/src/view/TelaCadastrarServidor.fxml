@@ -1,91 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="TelaPrincipal" fx:id="TelaPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="742.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.TelaCadastrarServidor">
+<AnchorPane fx:id="rootPane" prefHeight="531.0" prefWidth="494.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.TelaCadastrarAluno">
    <children>
-      <BorderPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="561.0" prefWidth="742.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <left>
-            <VBox prefHeight="521.0" prefWidth="154.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="57.0" prefWidth="494.0" style="-fx-background-color: #56705E;">
+         <children>
+            <Label alignment="CENTER" layoutX="139.0" layoutY="15.0" text="CADASTRO DE SERVIDOR" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="exitLabel" layoutX="464.0" layoutY="11.0" onMouseClicked="#exitAction" text="X" textFill="#070707">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutY="57.0" prefHeight="357.0" prefWidth="455.0" style="-fx-background-color: #CCC9BF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="57.0">
+         <children>
+            <JFXTextField fx:id="matriculaTxt" labelFloat="true" layoutX="14.0" layoutY="28.0" prefHeight="30.0" prefWidth="180.0" promptText="Matrícula SIAPE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="cpfTxt" labelFloat="true" layoutX="300.0" layoutY="28.0" prefHeight="30.0" prefWidth="180.0" promptText="CPF">
+               <font>
+                  <Font size="13.0" />
+               </font></JFXTextField>
+            <JFXTextField fx:id="nomeTxt" labelFloat="true" layoutX="33.0" layoutY="80.0" prefHeight="30.0" prefWidth="429.0" promptText="Nome">
+               <font>
+                  <Font size="13.0" />
+               </font></JFXTextField>
+            <JFXTextField fx:id="emailTxt" labelFloat="true" layoutX="55.0" layoutY="133.0" prefHeight="30.0" prefWidth="384.0" promptText="E-mail">
+               <font>
+                  <Font size="13.0" />
+               </font></JFXTextField>
+            <JFXTextField fx:id="emailTxt1" labelFloat="true" layoutX="133.0" layoutY="222.0" prefHeight="30.0" prefWidth="234.0" promptText="Nome de Usário/Login">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField layoutX="130.0" layoutY="289.0" prefHeight="25.0" prefWidth="234.0" promptText="Digite sua Senha">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXPasswordField>
+            <JFXPasswordField layoutX="130.0" layoutY="332.0" prefHeight="25.0" prefWidth="234.0" promptText="Confirme sua Senha">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXPasswordField>
+            <HBox layoutX="4.0" layoutY="406.0" prefHeight="68.0" prefWidth="487.0">
                <children>
-                  <Button id="pricipak" mnemonicParsing="false" prefHeight="72.0" prefWidth="164.0" styleClass="leftButtons" text="Principal" textAlignment="CENTER" />
-                  <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="173.0" styleClass="leftButtons" text="Emprestimos" />
-                  <Button layoutX="10.0" layoutY="83.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="174.0" styleClass="leftButtons" text="Cadastrar Usuario" />
-                  <Button layoutX="10.0" layoutY="235.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="183.0" styleClass="leftButtons" text="Consultar" />
-                  <Button layoutX="10.0" layoutY="311.0" lineSpacing="5.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="155.0" styleClass="leftButtons" text="Cadastrar Material" textOverrun="WORD_ELLIPSIS" />
-                  <Button layoutX="10.0" layoutY="159.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="165.0" styleClass="leftButtons" text="Relatorio" />
-                  <Button layoutX="10.0" layoutY="387.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="162.0" styleClass="leftButtons" text="Button" />
+                  <JFXButton fx:id="saveBtn" onAction="#saveUsuario" prefHeight="60.0" prefWidth="380.0" styleClass="jfx-button" stylesheets="@usuario.css" text="Save">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="cancelBtn" onAction="#cancel" prefHeight="60.0" prefWidth="380.0" styleClass="jfx-button" stylesheets="@usuario.css" text="Cancel">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
                </children>
-            </VBox>
-         </left>
-         <top>
-            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="TOP_RIGHT">
-              <items>
-                  <MenuButton mnemonicParsing="false" text="MenuButton">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Criar Adm" />
-                      <MenuItem mnemonicParsing="false" text="Action 2" />
-                    </items>
-                  </MenuButton>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="550.0" text="DGEOsig" textAlignment="CENTER" />
-                  <Button mnemonicParsing="false" text="Sair" />
-              </items>
-            </ToolBar>
-         </top>
-         <center>
-            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <children>
-                  <GridPane layoutX="10.0" layoutY="19.0" prefHeight="418.0" prefWidth="402.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="62.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="247.0" minWidth="10.0" prefWidth="247.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <Label text="CPF" />
-                        <Label text="Nome" GridPane.rowIndex="1" />
-                        <Label text="Email" GridPane.rowIndex="2" />
-                        <Label text="Matricula" GridPane.rowIndex="3" />
-                        <Label text="Login" GridPane.rowIndex="4" />
-                        <TextField fx:id="CPFCadastrar" GridPane.columnIndex="1" />
-                        <TextField fx:id="NomeCadastrar" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="EmailCadastrar" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField fx:id="MatriculaCadastrar" prefHeight="26.0" prefWidth="247.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label text="Senha" GridPane.rowIndex="5" />
-                        <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <PasswordField prefHeight="26.0" prefWidth="224.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                        <Label text="Confirmar senha" GridPane.rowIndex="6" />
-                     </children>
-                  </GridPane>
-                  <Button fx:id="Cadastrar" layoutX="470.0" layoutY="463.0" mnemonicParsing="false" onAction="#cadastrar" text="Cadastrar" />
-                  <CheckBox fx:id="Administrador" layoutX="45.0" layoutY="467.0" mnemonicParsing="false" text="Administrador" />
-               </children>
-            </Pane>
-         </center>
-      </BorderPane>
+            </HBox>
+            <Separator layoutX="19.0" layoutY="198.0" opacity="0.79" prefHeight="3.0" prefWidth="454.0" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

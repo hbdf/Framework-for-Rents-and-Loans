@@ -65,11 +65,11 @@
 								<Font size="13.0" />
 							</font>
 						</JFXButton>
-						<JFXButton fx:id="buscarUsuarioBtn" contentDisplay="TOP" onAction="#loadBuscarUsuario" prefHeight="180.0" prefWidth="190.0" styleClass="setup-button" stylesheets="@main.css" text="Buscar Usuário">
+						<JFXButton fx:id="encerrarEmprestimoBtn" contentDisplay="TOP" layoutX="10.0" layoutY="241.0" onAction="#loadEncerrarEmprestimo" prefHeight="180.0" prefWidth="190.0" styleClass="setup-button" stylesheets="@main.css" text="Encerrar Empréstimo">
 							<graphic>
 								<ImageView fitHeight="34.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
 									<image>
-										<Image url="@../images/users-2f382e.png" />
+										<Image url="@../images/tick-2f382e.png" />
 									</image>
 								</ImageView>
 							</graphic>
@@ -83,11 +83,11 @@
 								<Font size="13.0" />
 							</font>
 						</JFXButton>
-						<JFXButton fx:id="buscarFerramentaBtn" contentDisplay="TOP" layoutX="10.0" layoutY="241.0" onAction="#loadBuscarMaterial" prefHeight="180.0" prefWidth="190.0" styleClass="setup-button" stylesheets="@main.css" text="Buscar Ferramenta">
+						<JFXButton fx:id="buscarUsuarioBtn" contentDisplay="TOP" onAction="#loadBuscarUsuario" prefHeight="180.0" prefWidth="190.0" styleClass="setup-button" stylesheets="@main.css" text="Buscar Usuário">
 							<graphic>
 								<ImageView fitHeight="34.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
 									<image>
-										<Image url="@../images/search-2f382e.png" />
+										<Image url="@../images/users-2f382e.png" />
 									</image>
 								</ImageView>
 							</graphic>

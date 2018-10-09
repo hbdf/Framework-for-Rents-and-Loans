@@ -37,7 +37,7 @@ public class TelaPrincipalClass implements Initializable {
 	@FXML
     private JFXButton buscarUsuarioBtn;
 	@FXML
-    private JFXButton buscarFerramentaBtn;
+    private JFXButton encerrarEmprestimoBtn;
 	@FXML
     private JFXButton addUsuarioBtn;
     @FXML
@@ -145,16 +145,17 @@ public class TelaPrincipalClass implements Initializable {
     }
 	
 	@FXML
+    void loadEncerrarEmprestimo(ActionEvent event) {
+		
+		loadWindow("Encerrar Empréstimo", "src/view/TelaEncerrarEmprestimo.fxml"); 
+    }    
+	
+	@FXML
     void loadBuscarUsuario(ActionEvent event) {
 		
 		loadWindow("Buscar Usuário", "src/view/TelaBuscarUsuario.fxml");
     }
 	
-	@FXML
-    void loadBuscarMaterial(ActionEvent event) {
-		new TelaBuscarMaterial().open();
-//		loadWindow("Buscar Material", "src/view/ferramenta/FetchFerramenta.fxml"); 
-    }    
 	
 	@FXML
     void loadCadastrarUsuario(ActionEvent event) {
