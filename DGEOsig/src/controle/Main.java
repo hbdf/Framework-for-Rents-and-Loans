@@ -11,7 +11,7 @@ public class Main extends Application {
 		new loginClass().open();
 	}
 	public static void main (String[] args) {
-		MaterialDAO mat = new MaterialDAO();
+	/*	MaterialDAO mat = new MaterialDAO();
 		Material ma = new Material(10);
 		ma.set_nome("teste1");
 		ma.set_quantidade(2);
@@ -19,6 +19,7 @@ public class Main extends Application {
 		ma.set_serial("serial");
 		mat.cadastrar(ma);
 		mat.atualizar(ma, 3);
+		*/
 		launch(args);
 
 	}

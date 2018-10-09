@@ -9,15 +9,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Emprestimo {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	/*@Column
+	@OneToOne
+	@JoinColumn(name="usuario")
 	Usuario usuario;
-	@Column
+	@OneToOne
+	@JoinColumn(name="material")
 	Material material;
 	@Column
 	int quantidade;
@@ -75,5 +78,5 @@ public class Emprestimo {
 	public void set_quantidade(int quantidade_material) {
 		this.quantidade = quantidade_material;
 	}
-	*/
+	
 }
