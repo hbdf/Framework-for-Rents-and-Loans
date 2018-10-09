@@ -5,9 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import objeto.modelo.Aluno;
 import objeto.modelo.Usuario;
-import servico.CadastrarAlunoControle;
 import servico.UsuarioControle;
 
 import java.net.URL;

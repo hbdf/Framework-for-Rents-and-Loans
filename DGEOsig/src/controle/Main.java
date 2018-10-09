@@ -8,7 +8,7 @@ import objeto.modelo.MaterialDAO;
 public class Main extends Application {
 	@Override
 	public void start (Stage primaryStage) {
-		new loginClass().open();
+		new TelaLogin().open();
 	}
 	public static void main (String[] args) {
 	/*	MaterialDAO mat = new MaterialDAO();
