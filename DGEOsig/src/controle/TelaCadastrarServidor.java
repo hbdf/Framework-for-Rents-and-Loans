@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import servico.CadastrarAlunoControle;
 
 public class TelaCadastrarServidor {
+	
 	@FXML
 	private TextField CPFCadastrar;
 	@FXML

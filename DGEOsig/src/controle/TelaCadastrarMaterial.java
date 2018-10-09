@@ -1,71 +1,101 @@
 package controle;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextField;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import objeto.modelo.Material;
-import servico.CadastrarMaterialControle;
 
-public class TelaCadastrarMaterial {
-    @FXML
-    private AnchorPane TelaPrincipal;
-    @FXML
-    private TextField tfTombamento;
-    @FXML
-    private TextField tfNome;
-    @FXML
-    private TextArea taDescricao;
-    @FXML
-    private TextField tfSerie;
-    @FXML
-    private Button btnCadastrar;
-    @FXML
-    private Button btnCancelar;
 
-    @FXML
-    void cadastrarMaterial(ActionEvent event) {
-    	String numeroTombamento = tfTombamento.getText();
-    	String nome = tfNome.getText();
-    	String serie = tfSerie.getText();
-    	String descricao = taDescricao.getText();
-    	
-    	Material material = new Material(Integer.parseInt(numeroTombamento));
-    	material.set_nome(nome);
-    	material.set_serial(serie);
-    	material.set_descricao(descricao);
-    	CadastrarMaterialControle cadastrar = new CadastrarMaterialControle();
-    	cadastrar.cadastrar(material);
-    	//close
-    	this.close();
-    }
+public class TelaCadastrarMaterial implements Initializable {
 
+	@FXML
+    private AnchorPane rootPane;
+	
+	@FXML
+    private Label exitLabel;
+	
     @FXML
-    void cancelar(ActionEvent event) {
-    	this.close();
-    }
-
-	public void open() {
-		try {
-			Parent root = FXMLLoader.load(getClass().getResource("/view/TelaCadastrarMaterial.fxml"));
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			stage.setScene(scene);
-			stage.setTitle("Cadastrar Material");
-			stage.show();
-		}catch (Exception e) {
-			e.printStackTrace();
+    private JFXTextField idTxt;
+    @FXML
+    private ComboBox<Label> tiposComboBox;
+    @FXML
+    private JFXTextArea descricaoTxtArea;
+    
+    @FXML
+    private JFXButton saveBtn;
+    @FXML
+    private JFXButton cancelBtn;
+    
+    
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		initComboBoxTipos();
+	}
+	
+	@FXML
+    public void saveFerramenta(ActionEvent event) {
+		
+		String toolId = idTxt.getText();
+		String toolTipo = tiposComboBox.getSelectionModel().getSelectedItem().getText();
+		String toolDescricao = descricaoTxtArea.getText();
+		
+		if (toolId.isEmpty() || toolTipo.isEmpty() || toolDescricao.isEmpty()) {		
+			
+			emptyFieldAlert();
 		}
 		
+		// Uma Ferramenta sempre deve ser cadastrada como isDisponivel = 'true'.
+//		Material ferramenta = new Material(toolId, toolTipo, toolDescricao, true); 
+//		
+//		FerramentaDAO dao = new FerramentaDAO();		
+//		dao.createFerramenta(ferramenta);
+    }	
+
+    private void initComboBoxTipos() {
+    	
+    	ObservableList<Label> tipos = FXCollections.observableArrayList(new Label("1 - Bússola"), new Label("2 - GPS"), new Label("3 - Martelo Cristalino"), 
+				new Label("4 - Martelo Sedimentar"), new Label("5 - Perneiras") );
+    	
+		this.tiposComboBox.setItems(tipos);
 	}
+    	
+	private void emptyFieldAlert() {		
+		
+		// Tá dando algum tipo de CRASH no JVM quando a janela é fechada.
+		Alert alert = new Alert(Alert.AlertType.ERROR);
+		alert.setHeaderText(null);
+		alert.setContentText("Todos os campos devem ser preenchidos!");
+		alert.showAndWait();
+		return;
+	}
+
+    @FXML
+    void cancel(ActionEvent event) {    	
+    	close();
+    }
+    
+    @FXML
+    void exitAction(MouseEvent event) {
+    	close();
+    }
+
 	private void close() {
-		Stage stage = (Stage) btnCancelar.getScene().getWindow();
+		Stage stage = (Stage) exitLabel.getScene().getWindow();
     	stage.close();
 	}
 

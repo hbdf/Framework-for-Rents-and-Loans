@@ -146,7 +146,8 @@ public class TelaPrincipalClass implements Initializable {
 	
 	@FXML
     void loadBuscarUsuario(ActionEvent event) {
-		new TelaBuscarAluno().open();
+		
+		loadWindow("Buscar Usuário", "src/view/TelaBuscarUsuario.fxml");
     }
 	
 	@FXML
@@ -157,19 +158,14 @@ public class TelaPrincipalClass implements Initializable {
 	
 	@FXML
     void loadCadastrarUsuario(ActionEvent event) {
-		try {
-			new TelaCadastrarAluno().open();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-//		loadWindow("Cadastrar Novo Usuário", "src/view/usuario/AddUsuario.fxml");
+		
+		loadWindow("Cadastrar Novo Usuário", "src/view/TelaCadastrarUsuario.fxml");
     }
     
     @FXML
     void loadCadastrarMaterial(ActionEvent event) {		
-    	new TelaCadastrarMaterial().open();
-//    	loadWindow("Cadastrar Novo Material", "src/view/ferramenta/AddFerramenta.fxml");
+
+	    loadWindow("Cadastrar Novo Material", "src/view/TelaCadastrarMaterial.fxml");
     }    
     
     void loadWindow(String title, String location) {

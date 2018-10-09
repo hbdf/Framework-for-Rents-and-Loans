@@ -1,8 +1,8 @@
 package objeto.modelo;
 
-public abstract class discente extends Pessoa{
+public abstract class Discente extends Pessoa{
 	String matricula;
-	public discente(String mat, String nome, String email) {
+	public Discente(String mat, String nome, String email) {
 		//super(nome, email);
 		setNome(nome);
 		setEmail(email);

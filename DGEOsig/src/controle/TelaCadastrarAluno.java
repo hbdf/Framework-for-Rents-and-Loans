@@ -1,63 +1,120 @@
 package controle;
 
-import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import objeto.modelo.Usuario;
-import servico.CadastrarAlunoControle;
-import servico.UsuarioControle;
+import objeto.modelo.UsuarioDAO;
 
-public class TelaCadastrarAluno {
+
+public class TelaCadastrarAluno  implements Initializable {
+	
 	@FXML
-	private TextField CPFCadastrar;
+    private AnchorPane rootPane;
+	
 	@FXML
-	private TextField NomeCadastrar;
+    private Label exitLabel;
+	
 	@FXML
-	private TextField EmailCadastrar;
-	@FXML
-	private TextField MatriculaCadastrar;
+    private JFXComboBox<Label> tipoComboBox;
     @FXML
-    private TextField UsuarioCadastrar;
-	@FXML
-	private Button Cadastrar;
-
-	
-	public void open() throws IOException {
-		Stage primaryStage = new Stage();
-		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/TelaCadastrarAluno.fxml"));
-		Scene scene = new Scene (root);
-		//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-		primaryStage.setScene(scene);
-		primaryStage.setTitle("Cadastrar Aluno");
-		primaryStage.show();
+    private JFXTextField matriculaTxt;
+    @FXML
+    private JFXTextField cpfTxt;  
+    @FXML
+    private JFXTextField nomeTxt;   
+    @FXML
+    private JFXTextField emailTxt;       
+    
+    @FXML
+    private JFXButton saveBtn;
+    @FXML
+    private JFXButton cancelBtn;
+    
+    
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		initComboBoxTipo(); 
 	}
 	
 	@FXML
-	public void cadastrar (ActionEvent event) {
-		Usuario usuario = new Usuario();
-		usuario.set_cpf(CPFCadastrar.getText());
-		usuario.set_email(EmailCadastrar.getText());
-		usuario.set_nome(NomeCadastrar.getText());
-		usuario.set_matricula(MatriculaCadastrar.getText());
-		usuario.set_tipo("Aluno");
+    public void saveUsuario(ActionEvent event) { 
 		
-		UsuarioControle usuarioControle = new UsuarioControle();
-		usuarioControle.cadastrar(usuario);
-		Stage stage = (Stage) Cadastrar.getScene().getWindow(); //Obtendo a janela atual
-	    stage.close();
+		String userTipo = tipoComboBox.getSelectionModel().getSelectedItem().getText();	
+		String userMatricula = matriculaTxt.getText();
+		String userCPF = cpfTxt.getText();
+		String userNome = nomeTxt.getText();
+		String userEmail = emailTxt.getText();
 		
-	}
-	@FXML
-    void cancelar(ActionEvent event) {
-		Stage stage = (Stage) Cadastrar.getScene().getWindow(); //Obtendo a janela atual
-	    stage.close();
+		Usuario usuario;
+		
+		if (userMatricula.isEmpty() || userMatricula.isEmpty() || userCPF.isEmpty() 
+			|| userNome.isEmpty() || userEmail.isEmpty()) {		
+			
+			emptyFieldAlert();
+		}
+		
+		usuario = new Usuario(userMatricula, userCPF, userNome, userEmail);
+		usuario.set_tipo(userTipo);
+		
+//		if (userTipo == "DOCENTE") {			
+//			usuario = new Docente(userMatricula, userCPF, userNome, userEmail);
+//		} else if (userTipo == "DISCENTE"){			
+//			usuario = new Discente(userMatricula, userCPF, userNome, userEmail); 
+//		} else {
+//			usuario = null;
+//		}
+		
+		UsuarioDAO dao = new UsuarioDAO();
+		dao.cadastrar(usuario);
     }
+	
+	private void emptyFieldAlert() {
+		// Tá dando algum tipo de CRASH no JVM quando a janela é fechada.
+		Alert alert = new Alert(Alert.AlertType.ERROR);
+		alert.setHeaderText(null);
+		alert.setContentText("Todos os campos devem ser preenchidos!");
+		alert.showAndWait();
+		return;
+	}
+
+    @FXML
+    void cancel(ActionEvent event) {    	
+    	closeWindow();
+    }
+    
+    private void initComboBoxTipo() {
+    	
+    	ObservableList<Label> tipos = FXCollections.observableArrayList( new Label("1 - DOCENTE"), new Label("2 - DISCENTE") );
+    	
+		this.tipoComboBox.setItems(tipos);
+	}
+    
+    @FXML
+    void exitAction(MouseEvent event) {
+    	closeWindow();
+    }
+
+    
+    public void closeWindow() {
+    	
+    	Stage stage = (Stage) rootPane.getScene().getWindow();
+    	stage.close();
+    }
+    
 }
