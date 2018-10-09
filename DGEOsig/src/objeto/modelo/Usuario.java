@@ -31,6 +31,9 @@ public class Usuario {
 	public void set_cpf(String cpf) {
 		this.cpf = cpf;
 	}
+	public int get_id() {
+		return id;
+	}
 	public String get_nome() {
 		return nome;
 	}

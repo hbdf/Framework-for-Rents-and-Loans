@@ -13,4 +13,9 @@ public class MaterialControle {
 		//TODO THROWS
 		return materialDAO.buscar_id(id).get(0);
 	}
+	public Material buscar_matricula(String matricula) {
+		MaterialDAO materialDAO = new MaterialDAO();
+		//TODO THROWS
+		return materialDAO.buscar_matricula(matricula).get(0);
+	}
 }

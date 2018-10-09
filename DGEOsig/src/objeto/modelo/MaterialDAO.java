@@ -35,6 +35,15 @@ public class MaterialDAO {
 		return l;
 	}
 	
+	public List<Material> buscar_matricula(String id) {
+		em.getTransaction().begin();
+		Query q =  em.createQuery("select material from Material material where matricula = " + id);
+		List<Material> l = q.getResultList();
+		em.getTransaction().commit();
+		emf.close();
+		return l;
+	}
+	
 	public void atualizar(Material material, int quantidade) {
 		em.getTransaction().begin();
 		int nova_quantidade = material.quantidade + quantidade;
