@@ -29,8 +29,8 @@ public class Usuario {
 	
 //	protected Boolean isLimitado;
 	
-	protected Emprestimo emprestimoAtivo;
-	protected List<Emprestimo> historicoEmprestimos;
+/*	protected Emprestimo emprestimoAtivo;
+	protected List<Emprestimo> historicoEmprestimos;*/
 	
 	
 	public Usuario () {
@@ -46,31 +46,31 @@ public class Usuario {
 		this.nome = nome;
 		this.email = email;
 		
-		// Todo Requisitante assim que cadastrado não deve ter nenhum empréstimo ativo, logicamente.
-		this.emprestimoAtivo = null;
-		this.historicoEmprestimos = new ArrayList<>();
+		// Todo Requisitante assim que cadastrado nï¿½o deve ter nenhum emprï¿½stimo ativo, logicamente.
+		/*this.emprestimoAtivo = null;
+		this.historicoEmprestimos = new ArrayList<>();*/
 	}
-	
-	// Cria um NOVO empréstimo.
+	/*
+	// Cria um NOVO emprï¿½stimo.
 	public boolean createEmprestimoAtivo(Emprestimo emprestimo) {
 		
 		if (hasEmprestimoAtivo()) {
-			// O requisitante já possui um Empréstimo ativo. 
-			// Caso queira e possa pegar mais algum material o empréstimo ATIVO deve ser EDITADO.
+			// O requisitante jï¿½ possui um Emprï¿½stimo ativo. 
+			// Caso queira e possa pegar mais algum material o emprï¿½stimo ATIVO deve ser EDITADO.
 			return false;
 		}
 		
 		this.emprestimoAtivo = emprestimo;
-		// Empréstimo criado com sucesso.
+		// Emprï¿½stimo criado com sucesso.
 		return true;
 	}
 	
-	// Encerra o Empréstimo ativo/atual.
+	// Encerra o Emprï¿½stimo ativo/atual.
 	public boolean finishEmprestimoAtivo() {
 		
 		this.historicoEmprestimos.add(emprestimoAtivo);
 		this.emprestimoAtivo = null;		
-		// Empréstimo encerrado com sucesso.
+		// Emprï¿½stimo encerrado com sucesso.
 		return true;
 	}
 	
@@ -82,7 +82,7 @@ public class Usuario {
 		
 		return false;
 	}
-	
+	*/
 	public String get_cpf() {
 		return cpf;
 	}

@@ -48,7 +48,7 @@ public class TelaBuscarAluno implements Initializable{
     private ObservableList<String> list = FXCollections.observableArrayList("Matrícula", "CPF", "Nome");
     @FXML
     private TextField tfBusca;
-    @FXML 
+    
     void remover(ActionEvent event){
     	
     	String id = tfBusca.getText(); // ID DA BUSCA
@@ -71,7 +71,7 @@ public class TelaBuscarAluno implements Initializable{
     	this.close();
     }
 
-    @FXML
+  
     void cancelar(ActionEvent event) {
     	this.close();
     }

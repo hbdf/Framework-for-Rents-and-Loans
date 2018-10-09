@@ -18,6 +18,8 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import objeto.modelo.Material;
+import servico.MaterialControle;
 
 
 public class TelaCadastrarMaterial implements Initializable {
@@ -59,6 +61,11 @@ public class TelaCadastrarMaterial implements Initializable {
 			emptyFieldAlert();
 		}
 		
+		Material material = new Material(Integer.parseInt(toolId));
+		material.set_descricao(toolDescricao);
+		material.set_nome(toolTipo);
+		MaterialControle materialControle = new MaterialControle();
+		materialControle.cadastrar(material);
 		// Uma Ferramenta sempre deve ser cadastrada como isDisponivel = 'true'.
 //		Material ferramenta = new Material(toolId, toolTipo, toolDescricao, true); 
 //		
@@ -68,7 +75,7 @@ public class TelaCadastrarMaterial implements Initializable {
 
     private void initComboBoxTipos() {
     	
-    	ObservableList<Label> tipos = FXCollections.observableArrayList(new Label("1 - Bússola"), new Label("2 - GPS"), new Label("3 - Martelo Cristalino"), 
+    	ObservableList<Label> tipos = FXCollections.observableArrayList(new Label("1 - Bï¿½ssola"), new Label("2 - GPS"), new Label("3 - Martelo Cristalino"), 
 				new Label("4 - Martelo Sedimentar"), new Label("5 - Perneiras") );
     	
 		this.tiposComboBox.setItems(tipos);
@@ -76,7 +83,7 @@ public class TelaCadastrarMaterial implements Initializable {
     	
 	private void emptyFieldAlert() {		
 		
-		// Tá dando algum tipo de CRASH no JVM quando a janela é fechada.
+		// Tï¿½ dando algum tipo de CRASH no JVM quando a janela ï¿½ fechada.
 		Alert alert = new Alert(Alert.AlertType.ERROR);
 		alert.setHeaderText(null);
 		alert.setContentText("Todos os campos devem ser preenchidos!");

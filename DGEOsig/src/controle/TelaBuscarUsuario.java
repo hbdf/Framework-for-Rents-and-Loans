@@ -56,12 +56,12 @@ public class TelaBuscarUsuario implements Initializable{
 	@FXML
     void buscarUsuario(ActionEvent event) {
 		
-		
+		System.out.println("Buscar Usuario");
     }
 	
 	private void emptyFieldAlert() {
 		
-		// Tá dando algum tipo de CRASH no JVM quando a janela é fechada.
+		// Tï¿½ dando algum tipo de CRASH no JVM quando a janela ï¿½ fechada.
 		Alert alert = new Alert(Alert.AlertType.ERROR);
 		alert.setHeaderText(null);
 		alert.setContentText("Todos os campos devem ser preenchidos!");

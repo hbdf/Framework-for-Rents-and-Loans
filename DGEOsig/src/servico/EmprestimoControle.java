@@ -55,6 +55,6 @@ public class EmprestimoControle {
 		emprestimoDAO.cadastrar(emprestimo);
 		
 		// enviando um email comprovante
-		new Email(usuario, material, "Emprestimo");
+	//	new Email(usuario, material, "Emprestimo");
 	}
 }

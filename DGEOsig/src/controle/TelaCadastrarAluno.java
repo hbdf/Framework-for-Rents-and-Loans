@@ -19,6 +19,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import objeto.modelo.Usuario;
 import objeto.modelo.UsuarioDAO;
+import servico.UsuarioControle;
 
 
 public class TelaCadastrarAluno  implements Initializable {
@@ -72,20 +73,13 @@ public class TelaCadastrarAluno  implements Initializable {
 		usuario = new Usuario(userMatricula, userCPF, userNome, userEmail);
 		usuario.set_tipo(userTipo);
 		
-//		if (userTipo == "DOCENTE") {			
-//			usuario = new Docente(userMatricula, userCPF, userNome, userEmail);
-//		} else if (userTipo == "DISCENTE"){			
-//			usuario = new Discente(userMatricula, userCPF, userNome, userEmail); 
-//		} else {
-//			usuario = null;
-//		}
-		
-		UsuarioDAO dao = new UsuarioDAO();
-		dao.cadastrar(usuario);
+		UsuarioControle usuarioControle = new UsuarioControle();
+		usuarioControle.cadastrar(usuario);
+		this.closeWindow();
     }
 	
 	private void emptyFieldAlert() {
-		// Tá dando algum tipo de CRASH no JVM quando a janela é fechada.
+		// Tï¿½ dando algum tipo de CRASH no JVM quando a janela ï¿½ fechada.
 		Alert alert = new Alert(Alert.AlertType.ERROR);
 		alert.setHeaderText(null);
 		alert.setContentText("Todos os campos devem ser preenchidos!");
@@ -100,7 +94,7 @@ public class TelaCadastrarAluno  implements Initializable {
     
     private void initComboBoxTipo() {
     	
-    	ObservableList<Label> tipos = FXCollections.observableArrayList( new Label("1 - DOCENTE"), new Label("2 - DISCENTE") );
+    	ObservableList<Label> tipos = FXCollections.observableArrayList( new Label("Servidor"), new Label("Aluno") );
     	
 		this.tipoComboBox.setItems(tipos);
 	}

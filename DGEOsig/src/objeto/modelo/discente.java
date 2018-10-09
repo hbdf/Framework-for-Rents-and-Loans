@@ -1,4 +1,4 @@
-package objeto.modelo;
+/*package objeto.modelo;
 
 public abstract class Discente extends Pessoa{
 	String matricula;
@@ -19,3 +19,4 @@ public abstract class Discente extends Pessoa{
 		return matricula ;
 	}
 }
+*/
