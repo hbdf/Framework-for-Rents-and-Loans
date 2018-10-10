@@ -1,4 +1,4 @@
-package controle;
+package lixo;
 
 import java.io.IOException;
 

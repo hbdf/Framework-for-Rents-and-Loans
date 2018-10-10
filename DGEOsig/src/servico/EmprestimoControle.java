@@ -5,11 +5,13 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
-import objeto.modelo.Emprestimo;
-import objeto.modelo.EmprestimoDAO;
-import objeto.modelo.Material;
-import objeto.modelo.Usuario;
-import objeto.modelo.UsuarioDAO;
+import dao.EmprestimoDAO;
+import dao.UsuarioDAO;
+import modelo.Emprestimo;
+import modelo.Material;
+import modelo.Usuario;
+
+
 
 public class EmprestimoControle {
 	

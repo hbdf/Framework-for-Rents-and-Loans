@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootPane" prefHeight="422.0" prefWidth="559.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.TelaRealizarEmprestimo">
+<AnchorPane fx:id="rootPane" prefHeight="422.0" prefWidth="559.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.TelaCadastrarEmprestimo">
    <children>
       <HBox alignment="CENTER" prefHeight="46.0" prefWidth="467.0" style="-fx-background-color: #56705E;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>

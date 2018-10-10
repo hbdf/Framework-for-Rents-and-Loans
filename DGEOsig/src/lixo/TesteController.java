@@ -1,4 +1,4 @@
-package servico;
+package lixo;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

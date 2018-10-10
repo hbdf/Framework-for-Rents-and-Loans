@@ -2,13 +2,13 @@ package servico;
 
 import java.io.IOException;
 
-import controle.UsuarioNaoCadastradoClass;
+import dao.LoginDAO;
+import dao.LoginDAOSemBanco;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import objeto.modelo.LoginDAO;
-import objeto.modelo.LoginDAOSemBanco;
+import lixo.UsuarioNaoCadastradoClass;
 
 
 public class LoginControle {

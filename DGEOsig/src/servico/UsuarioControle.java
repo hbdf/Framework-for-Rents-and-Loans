@@ -2,8 +2,10 @@ package servico;
 
 import java.util.List;
 
-import objeto.modelo.Usuario;
-import objeto.modelo.UsuarioDAO;
+import dao.UsuarioDAO;
+import modelo.Usuario;
+
+
 
 public class UsuarioControle {
 	/*

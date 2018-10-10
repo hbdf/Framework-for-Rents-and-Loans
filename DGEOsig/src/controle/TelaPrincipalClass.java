@@ -23,15 +23,15 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import objeto.modelo.Emprestimo;
-import objeto.modelo.Material;
-import objeto.modelo.Usuario;
+import modelo.Emprestimo;
+import modelo.Material;
+import modelo.Usuario;
 
 
 public class TelaPrincipalClass implements Initializable {
 	
 	
-	// Botões Laterais...
+	// Botï¿½es Laterais...
 	@FXML
     private JFXButton registrarEmprestimoBtn;
 	@FXML
@@ -88,7 +88,7 @@ public class TelaPrincipalClass implements Initializable {
     @FXML
     private TableColumn<Emprestimo, String> emprestimoColumnID;
     @FXML
-    private TableColumn<Emprestimo, String> emprestimoColumnDataInicio;  //Ver se é melhor deixar o tipo String mesmo.
+    private TableColumn<Emprestimo, String> emprestimoColumnDataInicio;  //Ver se ï¿½ melhor deixar o tipo String mesmo.
     @FXML
     private TableColumn<Emprestimo, String> emprestimoColumnStatus;     
 
@@ -141,26 +141,26 @@ public class TelaPrincipalClass implements Initializable {
 	
 	@FXML
     void loadRegistrarEmprestimo(ActionEvent event) {
-		loadWindow("Realizar Empréstimo", "src/view/TelaRealizarEmprestimo.fxml"); 
+		loadWindow("Realizar Emprï¿½stimo", "src/view/TelaRealizarEmprestimo.fxml"); 
     }
 	
 	@FXML
     void loadEncerrarEmprestimo(ActionEvent event) {
 		
-		loadWindow("Encerrar Empréstimo", "src/view/TelaEncerrarEmprestimo.fxml"); 
+		loadWindow("Encerrar Emprï¿½stimo", "src/view/TelaEncerrarEmprestimo.fxml"); 
     }    
 	
 	@FXML
     void loadBuscarUsuario(ActionEvent event) {
 		
-		loadWindow("Buscar Usuário", "src/view/TelaBuscarUsuario.fxml");
+		loadWindow("Buscar Usuï¿½rio", "src/view/TelaBuscarUsuario.fxml");
     }
 	
 	
 	@FXML
     void loadCadastrarUsuario(ActionEvent event) {
 		
-		loadWindow("Cadastrar Novo Usuário", "src/view/TelaCadastrarUsuario.fxml");
+		loadWindow("Cadastrar Novo Usuï¿½rio", "src/view/TelaCadastrarUsuario.fxml");
     }
     
     @FXML
@@ -174,7 +174,7 @@ public class TelaPrincipalClass implements Initializable {
     	try {
 //			Parent parent = FXMLLoader.load(getClass().getClassLoader().getResource(location));
 			
-    		// Só está carregando assim do contrário lança exceção;
+    		// Sï¿½ estï¿½ carregando assim do contrï¿½rio lanï¿½a exceï¿½ï¿½o;
 			URL url = new File(location).toURI().toURL();
 			Parent parent = FXMLLoader.load(url);
 			
@@ -191,9 +191,9 @@ public class TelaPrincipalClass implements Initializable {
    //  ---- ACTIONS FROM TAB 'Usuarios'  ----
    private void initComboBoxUsuarios() {
    	
-		this.comboBoxUsuarios.getItems().add(new Label("Usuários Ativos") );
-		this.comboBoxUsuarios.getItems().add(new Label("Usuários com Empréstimo Ativo") );
-		this.comboBoxUsuarios.getItems().add(new Label("Usuários com Empréstimo Em Atraso") );
+		this.comboBoxUsuarios.getItems().add(new Label("Usuï¿½rios Ativos") );
+		this.comboBoxUsuarios.getItems().add(new Label("Usuï¿½rios com Emprï¿½stimo Ativo") );
+		this.comboBoxUsuarios.getItems().add(new Label("Usuï¿½rios com Emprï¿½stimo Em Atraso") );
 	}
 
    private void initColumnsUsuarios() {
@@ -218,9 +218,9 @@ public class TelaPrincipalClass implements Initializable {
    //  ---- ACTIONS FROM TAB 'Emprestimos'  ----
    private void initComboBoxEmprestimos() {
    	
-		this.comboBoxEmprestimos.getItems().add(new Label("Empréstimos Ativos") );
-		this.comboBoxEmprestimos.getItems().add(new Label("Empréstimos Encerrados") );
-		this.comboBoxEmprestimos.getItems().add(new Label("Empréstimos Em Atraso") );
+		this.comboBoxEmprestimos.getItems().add(new Label("Emprï¿½stimos Ativos") );
+		this.comboBoxEmprestimos.getItems().add(new Label("Emprï¿½stimos Encerrados") );
+		this.comboBoxEmprestimos.getItems().add(new Label("Emprï¿½stimos Em Atraso") );
 	}
 
    private void initColumnsEmprestimos() {
@@ -243,8 +243,8 @@ public class TelaPrincipalClass implements Initializable {
 	//   ---- ACTIONS FROM TAB 'Ferramentas'  ----
 	private void initComboBoxFerramentas() {
     	
-		this.comboBoxFerramentas.getItems().add(new Label("Ferramentas Disponíveis") );
-		this.comboBoxFerramentas.getItems().add(new Label("Ferramentas em Empréstimo") );
+		this.comboBoxFerramentas.getItems().add(new Label("Ferramentas Disponï¿½veis") );
+		this.comboBoxFerramentas.getItems().add(new Label("Ferramentas em Emprï¿½stimo") );
 		this.comboBoxFerramentas.getItems().add(new Label("Ferramentas Avariadas") );
 	}
 

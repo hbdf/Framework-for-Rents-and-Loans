@@ -1,4 +1,4 @@
-package servico;
+package lixo;
 
 import objeto.modelo.Material;
 import objeto.modelo.MaterialDAO;

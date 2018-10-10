@@ -1,4 +1,4 @@
-package objeto.modelo;
+package dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -7,6 +7,8 @@ import javax.persistence.Persistence;
 import java.util.List;
 
 import javax.persistence.Query;
+
+import modelo.Usuario;
 
 public class UsuarioDAO {
 	EntityManagerFactory emf;

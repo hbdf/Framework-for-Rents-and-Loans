@@ -1,5 +1,7 @@
 package objeto.modelo;
 
+import modelo.Usuario;
+
 public class Docente extends Usuario {
 	
 	
@@ -7,7 +9,7 @@ public class Docente extends Usuario {
 		
 		super(siape, cpf, nome, email);
 		
-		// Docentes não devem ter um limite do número de ferramentas solicitadas.
+		// Docentes nï¿½o devem ter um limite do nï¿½mero de ferramentas solicitadas.
 //		this.isLimitado = false;				
 	}
 

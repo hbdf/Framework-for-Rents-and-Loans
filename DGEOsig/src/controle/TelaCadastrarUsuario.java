@@ -17,12 +17,11 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import objeto.modelo.Usuario;
-import objeto.modelo.UsuarioDAO;
+import modelo.Usuario;
 import servico.UsuarioControle;
 
 
-public class TelaCadastrarAluno  implements Initializable {
+public class TelaCadastrarUsuario  implements Initializable {
 	
 	@FXML
     private AnchorPane rootPane;

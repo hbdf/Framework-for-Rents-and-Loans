@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 import servico.EmprestimoControle;
 
 
-public class TelaRealizarEmprestimo implements Initializable{
+public class TelaCadastrarEmprestimo implements Initializable{
 
 	@FXML
     private AnchorPane rootPane;
