@@ -38,6 +38,7 @@ public class MaterialDAO {
 		return l;
 	}
 	
+	// MATRICULA do material ???
 	public List<Material> buscar_matricula(String id) {
 		em.getTransaction().begin();
 		Query q =  em.createQuery("select material from Material material where matricula = " + id);
@@ -49,7 +50,7 @@ public class MaterialDAO {
 	
 	public void atualizar(Material material, int quantidade) {
 		em.getTransaction().begin();
-		int nova_quantidade = material.quantidade + quantidade;
+		int nova_quantidade = material.get_quantidade() + quantidade;
 		Query q = em.createNativeQuery("UPDATE Material SET quantidade = " + nova_quantidade + " WHERE id = " + material.get_id());
 		q.executeUpdate();
 		em.getTransaction().commit();

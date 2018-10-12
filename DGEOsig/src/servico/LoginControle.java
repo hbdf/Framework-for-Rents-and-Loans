@@ -27,6 +27,8 @@ public class LoginControle {
 				
 				Stage primaryStage = new Stage();
 				primaryStage.setScene(scene);
+				primaryStage.setMaximized(true);  	// Inicializa a tela Principal maximizada.
+				primaryStage.setResizable(false);   // Desabilita o botão maximizar.
 				primaryStage.show();
 				
 			} catch(Exception e) {
