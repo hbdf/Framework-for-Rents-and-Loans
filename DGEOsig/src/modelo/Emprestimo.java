@@ -23,8 +23,6 @@ public class Emprestimo {
 	@JoinColumn(name="material")
 	Material material;
 	@Column
-	int quantidade;
-	@Column
 	Date inicio;
 	@Column
 	int prazo;
@@ -33,10 +31,9 @@ public class Emprestimo {
 	
 	public Emprestimo () {}
 
-	public Emprestimo (Usuario usuario, Material material, int quantidade, Date inicio, int prazo, boolean status) {
+	public Emprestimo (Usuario usuario, Material material, Date inicio, int prazo, boolean status) {
 		this.usuario = usuario;
 		this.material = material;
-		this.quantidade = quantidade;
 		this.inicio = inicio;
 		this.prazo = prazo;
 		this.status = status;
@@ -90,12 +87,4 @@ public class Emprestimo {
 		this.material = material;
 	}
 
-	public int get_quantidade() {
-		return quantidade;
-	}
-
-	public void set_quantidade(int quantidade_material) {
-		this.quantidade = quantidade_material;
-	}
-	
 }

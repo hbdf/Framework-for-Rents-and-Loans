@@ -28,29 +28,22 @@ public class EmprestimoControle {
 	public void cadastrar(String usuario_id, String material_id, int prazo, int quantidade) {
 		
 		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
-
-		Usuario usuario;
-		Material material;
-		Emprestimo emprestimo;
+		
 		UsuarioControle usuario_controle = new UsuarioControle();
 		List<Usuario> lst_usuario = usuario_controle.buscar_matricula(usuario_id);
-		usuario = lst_usuario.get(0);
+		Usuario usuario = lst_usuario.get(0);
 		MaterialControle material_controle = MaterialControle.getInstance();
-		material = material_controle.buscar_id(Integer.parseInt(material_id));
+		Material material = material_controle.buscar_id(Integer.parseInt(material_id));
+		
 		if(usuario.tipo == "Aluno" && emprestimoDAO.get_por_id_usuario(usuario.get_id()) > 0) {
 			System.out.println("O usuario não pode fazer emprestimo");
 			return;
 		}
 		
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
-		
-		emprestimo = new Emprestimo();
 		Date date = new Date();
-		emprestimo.set_inicio(date);
-		emprestimo.set_material(material);
-		emprestimo.set_quantidade(quantidade);
-		emprestimo.set_prazo(prazo);
-		emprestimo.set_usuario(usuario);
+		Emprestimo emprestimo = new Emprestimo(usuario, material, date, prazo, true);
+	
 		emprestimoDAO.cadastrar(emprestimo);
 		System.out.println("email");
 		// enviando um email comprovante
