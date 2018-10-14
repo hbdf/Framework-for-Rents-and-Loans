@@ -28,16 +28,28 @@ public class Emprestimo {
 	Date inicio;
 	@Column
 	int prazo;
+	@Column
+	boolean status;
 	
 	public Emprestimo () {}
 
-	public Emprestimo (Usuario usuario, Material material, int quantidade, Date inicio, int prazo) {
+	public Emprestimo (Usuario usuario, Material material, int quantidade, Date inicio, int prazo, boolean status) {
 		this.usuario = usuario;
 		this.material = material;
 		this.quantidade = quantidade;
 		this.inicio = inicio;
 		this.prazo = prazo;
+		this.status = status;
 	}
+	
+	public boolean get_status() {
+		return status;
+	}
+	
+	public void set_status(boolean status) {
+		this.status = status;
+	}
+	
 	public int get_prazo() {
 		return prazo;
 	}
