@@ -53,4 +53,11 @@ public class EmprestimoDAO {
 		emf.close();
 		return l;
 	}
+	public void remover(Usuario usuario, Material material) {
+		em.getTransaction().begin();
+		Query q = em.createNativeQuery("DELETE Emprestimo FROM Emprestimo WHERE usuario = " + usuario.get_matricula());
+		q.executeUpdate();
+		em.getTransaction().commit();
+		emf.close();
+	}
 }

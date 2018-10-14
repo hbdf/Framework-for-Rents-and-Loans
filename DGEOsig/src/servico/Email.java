@@ -1,5 +1,4 @@
 package servico;
-/*
 
 import java.util.Date;
 import java.util.Properties;
@@ -35,7 +34,6 @@ public class Email {
 		subject = subject.replaceAll("@acao", acao);
 		message = message.replaceAll("@tagMaterial", material.get_nome());
 		message = message.replaceAll("@acao", acao);
-		System.out.println(message);
 	}
 	
 	public boolean sendEmail() {
@@ -68,7 +66,8 @@ public class Email {
 			retorno = false;
 			e.printStackTrace();
 		}
+		System.out.println("EMAIL ENVIADO");
 		return retorno;
 	}
 	
-}*/
+}
