@@ -1,4 +1,4 @@
-package objeto.modelo;
+package modelo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,6 +27,10 @@ public class Material {
 		this.id = id;
 	}
 	
+	public Material(int id, String nome) {
+		this.id = id;
+		this.nome = nome;
+	}
 	public String get_nome() {
 		return nome;
 	}

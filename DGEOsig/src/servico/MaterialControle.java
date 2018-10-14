@@ -1,7 +1,7 @@
 package servico;
 
-import objeto.modelo.Material;
-import objeto.modelo.MaterialDAO;
+import dao.MaterialDAO;
+import modelo.Material;
 
 public final class MaterialControle {
 	private static MaterialControle instance;

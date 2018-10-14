@@ -1,4 +1,4 @@
-package controle;
+package lixo;
 
 import java.io.IOException;
 
@@ -11,7 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import servico.CadastrarAlunoControle;
 
 public class TelaCadastrarServidor {
 	

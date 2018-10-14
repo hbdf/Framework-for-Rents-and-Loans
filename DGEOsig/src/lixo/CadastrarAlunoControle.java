@@ -1,8 +1,6 @@
-package servico;
+package lixo;
 
-import objeto.modelo.AlunoDAO;
 import objeto.modelo.Pessoa;
-import objeto.modelo.Aluno;
 
 
 // PASSAR O ALUNO

@@ -23,15 +23,15 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import objeto.modelo.Emprestimo;
-import objeto.modelo.Material;
-import objeto.modelo.Usuario;
+import modelo.Emprestimo;
+import modelo.Material;
+import modelo.Usuario;
 
 
 public class TelaPrincipalClass implements Initializable {
 	
 	
-	// Botões Laterais...
+	// Botï¿½es Laterais...
 	@FXML
     private JFXButton registrarEmprestimoBtn;
 	@FXML
@@ -88,7 +88,7 @@ public class TelaPrincipalClass implements Initializable {
     @FXML
     private TableColumn<Emprestimo, String> emprestimoColumnID;
     @FXML
-    private TableColumn<Emprestimo, String> emprestimoColumnDataInicio;  //Ver se é melhor deixar o tipo String mesmo.
+    private TableColumn<Emprestimo, String> emprestimoColumnDataInicio;  //Ver se ï¿½ melhor deixar o tipo String mesmo.
     @FXML
     private TableColumn<Emprestimo, String> emprestimoColumnStatus;     
 
@@ -141,45 +141,44 @@ public class TelaPrincipalClass implements Initializable {
 	
 	@FXML
     void loadRegistrarEmprestimo(ActionEvent event) {
-		new TelaRealizarEmprestimo().open();
+		loadWindow("src/view/TelaRealizarEmprestimo.fxml"); 
     }
 	
 	@FXML
     void loadEncerrarEmprestimo(ActionEvent event) {
 		
-		loadWindow("Encerrar Empréstimo", "src/view/TelaEncerrarEmprestimo.fxml"); 
+		loadWindow("src/view/TelaEncerrarEmprestimo.fxml"); 
     }    
 	
 	@FXML
     void loadBuscarUsuario(ActionEvent event) {
 		
-		loadWindow("Buscar Usuário", "src/view/TelaBuscarUsuario.fxml");
+		loadWindow("src/view/TelaBuscarUsuario.fxml");
     }
 	
 	
 	@FXML
     void loadCadastrarUsuario(ActionEvent event) {
 		
-		loadWindow("Cadastrar Novo Usuário", "src/view/TelaCadastrarUsuario.fxml");
+		loadWindow("src/view/TelaCadastrarUsuario.fxml");
     }
     
     @FXML
     void loadCadastrarMaterial(ActionEvent event) {		
 
-	    loadWindow("Cadastrar Novo Material", "src/view/TelaCadastrarMaterial.fxml");
+	    loadWindow("src/view/TelaCadastrarMaterial.fxml");
     }    
     
-    void loadWindow(String title, String location) {
+    void loadWindow(String location) {
     	
     	try {
-//			Parent parent = FXMLLoader.load(getClass().getClassLoader().getResource(location));
+			// Parent parent = FXMLLoader.load(getClass().getClassLoader().getResource(location));
 			
-    		// Só está carregando assim do contrário lança exceção;
+    		// Só está carregando assim do contrário lançaa exceção;
 			URL url = new File(location).toURI().toURL();
 			Parent parent = FXMLLoader.load(url);
 			
 			Stage stage = new Stage(StageStyle.UNDECORATED);
-			stage.setTitle(title);
 			stage.setScene( new Scene(parent) );
 			stage.show();
 			
@@ -191,9 +190,9 @@ public class TelaPrincipalClass implements Initializable {
    //  ---- ACTIONS FROM TAB 'Usuarios'  ----
    private void initComboBoxUsuarios() {
    	
-		this.comboBoxUsuarios.getItems().add(new Label("Usuários Ativos") );
-		this.comboBoxUsuarios.getItems().add(new Label("Usuários com Empréstimo Ativo") );
-		this.comboBoxUsuarios.getItems().add(new Label("Usuários com Empréstimo Em Atraso") );
+		this.comboBoxUsuarios.getItems().add(new Label("Usuï¿½rios Ativos") );
+		this.comboBoxUsuarios.getItems().add(new Label("Usuï¿½rios com Emprï¿½stimo Ativo") );
+		this.comboBoxUsuarios.getItems().add(new Label("Usuï¿½rios com Emprï¿½stimo Em Atraso") );
 	}
 
    private void initColumnsUsuarios() {

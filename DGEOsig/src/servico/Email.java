@@ -1,6 +1,5 @@
 package servico;
 
-import java.util.Date;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -11,8 +10,10 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import objeto.modelo.Material;
-import objeto.modelo.Usuario;
+import modelo.Material;
+import modelo.Usuario;
+
+
 
 public class Email {
 	private String from = "dgeosigufrn@gmail.com";

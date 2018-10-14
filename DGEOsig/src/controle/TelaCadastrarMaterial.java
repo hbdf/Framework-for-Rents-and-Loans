@@ -18,10 +18,8 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import objeto.modelo.Material;
+import modelo.Material;
 import servico.MaterialControle;
-import sun.security.jca.GetInstance;
-
 
 public class TelaCadastrarMaterial implements Initializable {
 

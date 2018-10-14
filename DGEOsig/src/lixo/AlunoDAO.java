@@ -1,4 +1,4 @@
-package objeto.modelo;
+package lixo;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

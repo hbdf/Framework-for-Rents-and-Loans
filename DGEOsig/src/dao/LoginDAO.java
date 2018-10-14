@@ -1,4 +1,4 @@
-package objeto.modelo;
+package dao;
 
 public interface LoginDAO 
 {

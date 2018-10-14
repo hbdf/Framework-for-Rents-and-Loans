@@ -1,4 +1,4 @@
-package objeto.modelo;
+package lixo;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

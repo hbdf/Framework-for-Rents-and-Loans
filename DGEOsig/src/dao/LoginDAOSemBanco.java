@@ -1,4 +1,4 @@
-package objeto.modelo;
+package dao;
 
 import java.util.HashMap;
 import java.util.Map;

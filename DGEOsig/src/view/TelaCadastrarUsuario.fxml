@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootPane" prefHeight="414.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.TelaCadastrarAluno">
+<AnchorPane fx:id="rootPane" prefHeight="414.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.TelaCadastrarUsuario">
    <children>
       <Pane prefHeight="57.0" prefWidth="455.0" style="-fx-background-color: #56705E;">
          <children>
