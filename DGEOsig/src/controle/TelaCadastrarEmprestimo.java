@@ -49,7 +49,7 @@ public class TelaCadastrarEmprestimo implements Initializable{
     void confirmarEmprestimo(ActionEvent event) {
     	
     	EmprestimoControle emprestimoControle = new EmprestimoControle();
-    	emprestimoControle.cadastrar(matriculaTxt.getText(), idTxt.getText(), 15, Integer.parseInt(qtdTxt.getText()));
+    	emprestimoControle.cadastrar(matriculaTxt.getText(), idTxt.getText(), 15);
     	
     	this.close();
     }

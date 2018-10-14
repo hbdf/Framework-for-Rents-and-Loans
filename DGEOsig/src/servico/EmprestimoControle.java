@@ -25,7 +25,7 @@ public class EmprestimoControle {
 	
 	
 	
-	public void cadastrar(String usuario_id, String material_id, int prazo, int quantidade) {
+	public void cadastrar(String usuario_id, String material_id, int prazo) {
 		
 		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
 		
@@ -42,7 +42,8 @@ public class EmprestimoControle {
 		
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		Date date = new Date();
-		Emprestimo emprestimo = new Emprestimo(usuario, material, date, prazo, true);
+		boolean aux = true;
+		Emprestimo emprestimo = new Emprestimo(usuario, material, date, prazo, aux);
 	
 		emprestimoDAO.cadastrar(emprestimo);
 		System.out.println("email");

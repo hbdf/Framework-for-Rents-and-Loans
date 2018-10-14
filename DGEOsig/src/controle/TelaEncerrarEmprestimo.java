@@ -13,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import servico.EmprestimoControle;
 
 public class TelaEncerrarEmprestimo implements Initializable {
 
@@ -42,7 +43,8 @@ public class TelaEncerrarEmprestimo implements Initializable {
     @FXML
     void devolverMaterialAction(ActionEvent event) {
     	//TODO
-    	
+    	EmprestimoControle emprestimoControle = new EmprestimoControle();
+    	emprestimoControle.remover(matriculaTxt.getText(), idMaterialTxt.getText());
     }
 
     @FXML
