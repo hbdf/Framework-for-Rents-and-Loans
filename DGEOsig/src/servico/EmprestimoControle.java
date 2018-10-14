@@ -26,6 +26,7 @@ public class EmprestimoControle {
 	
 	
 	public void cadastrar(String usuario_id, String material_id, int prazo, int quantidade) {
+		
 		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
 
 		Usuario usuario;
@@ -56,6 +57,7 @@ public class EmprestimoControle {
 		new Email(usuario, material, "Emprestimo").sendEmail();
 	}
 	
+	
 	public void remover(String matricula, String id_material) {
 		MaterialControle material_controle = MaterialControle.getInstance();
 		Material material = material_controle.buscar_id(Integer.parseInt(id_material));
@@ -66,4 +68,5 @@ public class EmprestimoControle {
 		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
 		emprestimoDAO.remover(usuario, material);
 	}
+	
 }

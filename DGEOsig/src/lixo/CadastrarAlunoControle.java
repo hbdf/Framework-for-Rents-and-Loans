@@ -1,5 +1,5 @@
 package lixo;
-
+/*
 import objeto.modelo.Pessoa;
 
 
@@ -24,3 +24,4 @@ public class CadastrarAlunoControle {
 		return banco.buscar(chave); //
 	}
 }
+*/

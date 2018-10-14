@@ -1,6 +1,7 @@
 package lixo;
 
 import javax.persistence.Entity;
+/*
 import javax.persistence.Table;
 
 import objeto.modelo.Pessoa;
@@ -15,3 +16,4 @@ public class Aluno extends Pessoa{
 	}
 	
 }
+*/
