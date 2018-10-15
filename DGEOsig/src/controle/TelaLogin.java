@@ -60,6 +60,7 @@ public class TelaLogin {
     	
     	try {
 			if(login.PodeEntrar(usernameTxt.getText(), passwordField.getText())) {
+				new TelaPrincipalClass().open();
 				this.close();
 			}
 		} catch (IOException e) {
@@ -69,7 +70,7 @@ public class TelaLogin {
 
     @FXML
     void esqueceuAction(ActionEvent event) {
-    	System.out.println("Feature ainda não adicionada!");
+    	System.out.println("Feature ainda nï¿½o adicionada!");
     }
 	
     @FXML
