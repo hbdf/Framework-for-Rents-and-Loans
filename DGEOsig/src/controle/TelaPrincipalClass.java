@@ -4,11 +4,15 @@ package controle;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,6 +30,7 @@ import javafx.stage.StageStyle;
 import modelo.Emprestimo;
 import modelo.Material;
 import modelo.Usuario;
+import servico.UsuarioControle;
 
 
 public class TelaPrincipalClass implements Initializable {
@@ -63,8 +68,10 @@ public class TelaPrincipalClass implements Initializable {
     private TableColumn<Usuario, String> usuarioColumnNome;
     @FXML
     private TableColumn<Usuario, String> usuarioColumnEmail; 
-    @FXML
-    private TableColumn<Usuario, String> usuarioColumnEmprestimoAtivo; 
+    
+    private List<Usuario> listUsuarios;
+    private ObservableList<Usuario> observableListUsuario;
+    
 
     @FXML
     private HBox bottomUsuarios;
@@ -130,6 +137,7 @@ public class TelaPrincipalClass implements Initializable {
 		
 		initComboBoxUsuarios();
 		initColumnsUsuarios();	//Tab Usuarios
+		carregarTableViewUsuario(new UsuarioControle().buscar());
 		
 		initComboBoxEmprestimos();
 		initColumnsEmprestimos();	//Tab Emprestimos
@@ -174,7 +182,7 @@ public class TelaPrincipalClass implements Initializable {
     	try {
 			// Parent parent = FXMLLoader.load(getClass().getClassLoader().getResource(location));
 			
-    		// Só está carregando assim do contrário lançaa exceção;
+    		// Sï¿½ estï¿½ carregando assim do contrï¿½rio lanï¿½aa exceï¿½ï¿½o;
 			URL url = new File(location).toURI().toURL();
 			Parent parent = FXMLLoader.load(url);
 			
@@ -200,9 +208,12 @@ public class TelaPrincipalClass implements Initializable {
 		usuarioColumnMatricula.setCellValueFactory(new PropertyValueFactory<>("matricula"));	
 		usuarioColumnNome.setCellValueFactory(new PropertyValueFactory<>("nome"));	
 		usuarioColumnEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
-		ferramentaColumnStatus.setCellValueFactory(new PropertyValueFactory<>("emprestimoAtivo"));  // PODE DAR ERRADO !!!
 	}
-   
+   private void carregarTableViewUsuario(List<Usuario> list) {
+	   observableListUsuario = FXCollections.observableArrayList((ArrayList)list);
+	   tableViewUsuarios.setItems(observableListUsuario);
+   }
+
    @FXML
    void buscarUsuariosAction(ActionEvent event) {
    	
@@ -217,9 +228,9 @@ public class TelaPrincipalClass implements Initializable {
    //  ---- ACTIONS FROM TAB 'Emprestimos'  ----
    private void initComboBoxEmprestimos() {
    	
-		this.comboBoxEmprestimos.getItems().add(new Label("Empréstimos Ativos") );
-		this.comboBoxEmprestimos.getItems().add(new Label("Empréstimos Encerrados") );
-		this.comboBoxEmprestimos.getItems().add(new Label("Empréstimos Em Atraso") );
+		this.comboBoxEmprestimos.getItems().add(new Label("Emprï¿½stimos Ativos") );
+		this.comboBoxEmprestimos.getItems().add(new Label("Emprï¿½stimos Encerrados") );
+		this.comboBoxEmprestimos.getItems().add(new Label("Emprï¿½stimos Em Atraso") );
 	}
 
    private void initColumnsEmprestimos() {
@@ -242,8 +253,8 @@ public class TelaPrincipalClass implements Initializable {
 	//   ---- ACTIONS FROM TAB 'Ferramentas'  ----
 	private void initComboBoxFerramentas() {
     	
-		this.comboBoxFerramentas.getItems().add(new Label("Ferramentas Disponíveis") );
-		this.comboBoxFerramentas.getItems().add(new Label("Ferramentas em Empréstimo") );
+		this.comboBoxFerramentas.getItems().add(new Label("Ferramentas Disponï¿½veis") );
+		this.comboBoxFerramentas.getItems().add(new Label("Ferramentas em Emprï¿½stimo") );
 		this.comboBoxFerramentas.getItems().add(new Label("Ferramentas Avariadas") );
 	}
 
@@ -298,5 +309,25 @@ public class TelaPrincipalClass implements Initializable {
 	    Main login = new Main();
 	    Stage primaryStage = new Stage();
 		login.start(primaryStage );
+	}
+
+
+	public void open() {
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("/view/TelaPrincipal.fxml"));	
+			
+			Scene scene = new Scene(root);
+//			scene.getStylesheets().add(getClass().getResource("/view_novo/main.css").toExternalForm()); 
+			
+			Stage primaryStage = new Stage();
+			primaryStage.setScene(scene);
+			primaryStage.setMaximized(true);  	// Inicializa a tela Principal maximizada.
+			primaryStage.setResizable(false);   // Desabilita o botï¿½o maximizar.
+			primaryStage.show();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 }
