@@ -137,7 +137,9 @@ public class TelaPrincipalClass implements Initializable {
 		
 		initComboBoxUsuarios();
 		initColumnsUsuarios();	//Tab Usuarios
-		carregarTableViewUsuario(new UsuarioControle().buscar());
+		UsuarioControle usuarioControle = new UsuarioControle();
+		List <Usuario> lst = usuarioControle.buscar();
+		carregarTableViewUsuario(lst);
 		
 		initComboBoxEmprestimos();
 		initColumnsEmprestimos();	//Tab Emprestimos
