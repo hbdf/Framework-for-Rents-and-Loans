@@ -212,7 +212,12 @@ public class TelaPrincipalClass implements Initializable {
 		usuarioColumnEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
 	}
    private void carregarTableViewUsuario(List<Usuario> list) {
-	   observableListUsuario = FXCollections.observableArrayList((ArrayList)list);
+	   ArrayList<Usuario> arr = new ArrayList<Usuario>();
+	   System.out.println("AQUIIIIIII");
+	   for (int i = 0; i < list.size(); i++) {
+		   arr.add(list.get(i));
+	   }
+	   observableListUsuario = FXCollections.observableArrayList(arr);
 	   tableViewUsuarios.setItems(observableListUsuario);
    }
 
