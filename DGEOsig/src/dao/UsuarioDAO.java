@@ -44,6 +44,15 @@ public class UsuarioDAO {
 		return l;
 	}
 	
+	public List<Usuario> buscar() {
+		em.getTransaction().begin();
+		Query q =  em.createQuery("select usuario from Usuario usuario");
+		List<Usuario> l = q.getResultList();
+		em.getTransaction().commit();
+		emf.close();
+		return l;
+	}
+	
 	public boolean remover_matricula(String matricula) {
 		List <Usuario> lista = buscar_matricula(matricula);
 		if(lista.isEmpty()) {

@@ -28,6 +28,11 @@ public class UsuarioControle {
 		return usuarioDAO.buscar_CPF(CPF);
 	}
 	
+	public List<Usuario> buscar() {
+		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		return usuarioDAO.buscar();
+	}
+	
 	public void remover_matricula(String matricula) {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		usuarioDAO.remover_matricula(matricula);
