@@ -49,6 +49,7 @@ public class TelaBuscarAluno implements Initializable{
     @FXML
     private TextField tfBusca;
     
+    @FXML
     void remover(ActionEvent event){
     	
     	String id = tfBusca.getText(); // ID DA BUSCA
@@ -71,7 +72,7 @@ public class TelaBuscarAluno implements Initializable{
     	this.close();
     }
 
-  
+    @FXML
     void cancelar(ActionEvent event) {
     	this.close();
     }
@@ -83,7 +84,7 @@ public class TelaBuscarAluno implements Initializable{
 	public void open() {
 		try {
 		Stage buscarAluno = new Stage();
-		Parent tela = FXMLLoader.load(getClass().getResource("/view/TelaBuscarAluno.fxml"));
+		Parent tela = FXMLLoader.load(getClass().getResource("/lixo/TelaBuscarAluno.fxml"));
 		Scene scene = new Scene(tela);
 		buscarAluno.setScene(scene);
 		buscarAluno.setTitle("BUSCA");

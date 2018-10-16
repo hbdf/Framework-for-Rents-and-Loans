@@ -27,6 +27,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import lixo.TelaBuscarAluno;
 import modelo.Emprestimo;
 import modelo.Material;
 import modelo.Usuario;
@@ -163,7 +164,8 @@ public class TelaPrincipalClass implements Initializable {
 	@FXML
     void loadBuscarUsuario(ActionEvent event) {
 		
-		loadWindow("src/view/TelaBuscarUsuario.fxml");
+//		loadWindow("src/lixo/TelaBuscarUsuario.fxml");
+		new TelaBuscarAluno().open();
     }
 	
 	
