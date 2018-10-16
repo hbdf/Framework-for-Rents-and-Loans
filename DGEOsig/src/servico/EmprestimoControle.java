@@ -29,7 +29,7 @@ public class EmprestimoControle {
 		
 		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
 		
-		UsuarioControle usuario_controle = new UsuarioControle();
+		UsuarioControle usuario_controle = UsuarioControle.getInstance();
 		List<Usuario> lst_usuario = usuario_controle.buscar_matricula(usuario_id);
 		Usuario usuario = lst_usuario.get(0);
 		MaterialControle material_controle = MaterialControle.getInstance();
@@ -56,7 +56,7 @@ public class EmprestimoControle {
 		MaterialControle material_controle = MaterialControle.getInstance();
 		Material material = material_controle.buscar_id(Integer.parseInt(id_material));
 		Usuario usuario;
-		UsuarioControle usuario_controle = new UsuarioControle();
+		UsuarioControle usuario_controle = UsuarioControle.getInstance();
 		List<Usuario> lst_usuario = usuario_controle.buscar_matricula(matricula);
 		usuario = lst_usuario.get(0);
 		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();

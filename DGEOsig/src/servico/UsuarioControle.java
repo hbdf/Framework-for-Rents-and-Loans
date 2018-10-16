@@ -7,10 +7,18 @@ import modelo.Usuario;
 
 
 
-public class UsuarioControle {
+public final class UsuarioControle {
 	/*
 	 * TODO RELAIZAR O CONTROLE DO USUARIO (CRIAR UM MÉTODO VALIDAÇÃO)
 	 */
+	private static UsuarioControle instance;
+	public static UsuarioControle getInstance() {
+		if(instance == null) {
+			instance = new UsuarioControle();
+		}
+		return instance;
+	}
+	private UsuarioControle () {}
 	public void cadastrar(Usuario usuario) {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		if(usuarioDAO.buscar_matricula(usuario.get_matricula()).size() > 0) {

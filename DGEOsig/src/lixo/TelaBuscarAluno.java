@@ -55,13 +55,13 @@ public class TelaBuscarAluno implements Initializable{
     	String chave = cbTipoBusca.getValue();
     	
     	if(chave.equals("Matrícula")) {
-    		UsuarioControle usuarioControle = new UsuarioControle();
+    		UsuarioControle usuarioControle = UsuarioControle.getInstance();
     		List<Usuario> list = usuarioControle.buscar_matricula(id);
     		Usuario first = list.get(0);
     		usuarioControle.remover_matricula(first.get_matricula());
 
     	} else if(chave.equals("CPF")) {
-    		UsuarioControle usuarioControle = new UsuarioControle();
+    		UsuarioControle usuarioControle = UsuarioControle.getInstance();
     		List<Usuario> list = usuarioControle.buscar_CPF(id);
     		Usuario first = list.get(0);
     		usuarioControle.remover_matricula(first.get_matricula());
@@ -108,7 +108,7 @@ public class TelaBuscarAluno implements Initializable{
     	String chave = cbTipoBusca.getValue();
     	
     	if(chave.equals("Matrícula")) {
-    		UsuarioControle usuarioControle = new UsuarioControle();
+    		UsuarioControle usuarioControle = UsuarioControle.getInstance();
     		List<Usuario> list = usuarioControle.buscar_matricula(id);
     		if(list.isEmpty()) {
     			System.out.println("Lista vazia");
@@ -122,7 +122,7 @@ public class TelaBuscarAluno implements Initializable{
     	    	btnRemover.setOpacity(1.0); // botao remover aparece apenas quando clicado em remover
     		}
     	} else if(chave.equals("CPF")) {
-    		UsuarioControle usuarioControle = new UsuarioControle();
+    		UsuarioControle usuarioControle = UsuarioControle.getInstance();
     		List<Usuario> list = usuarioControle.buscar_CPF(id);
     		if(list.isEmpty()) {
     			System.out.println("Lista vazia");

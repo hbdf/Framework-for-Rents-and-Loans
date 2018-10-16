@@ -72,7 +72,7 @@ public class TelaCadastrarUsuario  implements Initializable {
 		usuario = new Usuario(userMatricula, userCPF, userNome, userEmail);
 		usuario.set_tipo(userTipo);
 		
-		UsuarioControle usuarioControle = new UsuarioControle();
+		UsuarioControle usuarioControle = UsuarioControle.getInstance();
 		usuarioControle.cadastrar(usuario);
 		this.closeWindow();
     }
