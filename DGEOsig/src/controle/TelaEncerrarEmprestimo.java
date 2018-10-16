@@ -45,6 +45,7 @@ public class TelaEncerrarEmprestimo implements Initializable {
     	//TODO
     	EmprestimoControle emprestimoControle = new EmprestimoControle();
     	emprestimoControle.remover(matriculaTxt.getText(), idMaterialTxt.getText());
+    	this.close();
     }
 
     @FXML
