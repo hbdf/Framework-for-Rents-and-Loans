@@ -70,7 +70,6 @@ public class TelaPrincipalClass implements Initializable {
     @FXML
     private TableColumn<Usuario, String> usuarioColumnEmail; 
     
-    private List<Usuario> listUsuarios;
     private ObservableList<Usuario> observableListUsuario;
     
 
@@ -134,19 +133,16 @@ public class TelaPrincipalClass implements Initializable {
     
     
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	public void initialize(URL url, ResourceBundle rb) {
 		
 		initComboBoxUsuarios();
-		initColumnsUsuarios();	//Tab Usuarios
-		UsuarioControle usuarioControle = UsuarioControle.getInstance();
-		List <Usuario> lst = usuarioControle.buscar();
-		carregarTableViewUsuario(lst);
+		carregarTableViewUsuario();
 		
-		initComboBoxEmprestimos();
-		initColumnsEmprestimos();	//Tab Emprestimos
-		
-		initComboBoxFerramentas();
-		initColumnsFerramentas();	//Tab Ferramentas
+//		initComboBoxEmprestimos();
+//		initColumnsEmprestimos();	//Tab Emprestimos
+//		
+//		initComboBoxFerramentas();
+//		initColumnsFerramentas();	//Tab Ferramentas
 	}
 	
 	
@@ -207,19 +203,21 @@ public class TelaPrincipalClass implements Initializable {
 		this.comboBoxUsuarios.getItems().add(new Label("Usu�rios com Empr�stimo Em Atraso") );
 	}
 
-   private void initColumnsUsuarios() {
-		
+
+   private void carregarTableViewUsuario() {
+
+		System.out.println("entrou no initColumsUsuario");
 		usuarioColumnMatricula.setCellValueFactory(new PropertyValueFactory<>("matricula"));	
 		usuarioColumnNome.setCellValueFactory(new PropertyValueFactory<>("nome"));	
 		usuarioColumnEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
-	}
-   private void carregarTableViewUsuario(List<Usuario> list) {
-	   ArrayList<Usuario> arr = new ArrayList<Usuario>();
-	   System.out.println("AQUIIIIIII");
-	   for (int i = 0; i < list.size(); i++) {
-		   arr.add(list.get(i));
-	   }
-	   observableListUsuario = FXCollections.observableArrayList(arr);
+	   
+		UsuarioControle usuarioControle = UsuarioControle.getInstance();
+		List <Usuario> list = usuarioControle.buscar();
+	   
+//	   List<Usuario> listTeste = new ArrayList<>();
+//	   listTeste.add(new Usuario("2015", "373", "vinicius", "viniciusrvk@gmail.com")); // 
+	   
+	   observableListUsuario = FXCollections.observableArrayList(list);
 	   tableViewUsuarios.setItems(observableListUsuario);
    }
 
@@ -230,7 +228,7 @@ public class TelaPrincipalClass implements Initializable {
 
    @FXML
    void openVisualizarUsuario(ActionEvent event) {
-
+	   System.out.println(tableViewUsuarios.getItems().get(0).matricula);
    }   
 
     
