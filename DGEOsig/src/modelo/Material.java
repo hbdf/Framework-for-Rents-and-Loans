@@ -19,8 +19,6 @@ public class Material {
 	String serial; 
 	@Column
 	String descricao;
-	@Column
-	int quantidade;
 	
 	public Material () {}
 	public Material (int id) {
@@ -43,9 +41,7 @@ public class Material {
 	public String get_descricao() {
 		return descricao;
 	}
-	public int get_quantidade() {
-		return quantidade;
-	}
+
 	
 	public void set_nome(String nome) {
 		this.nome = nome;
@@ -55,15 +51,9 @@ public class Material {
 		this.serial = serial;
 	}
 	
-	public void set_quantidade(int quantidade) {
-		this.quantidade = quantidade;
-	}
-	
+
 	public void set_descricao(String descricao) {
 		this.descricao = descricao;
 	}
 	
-	public void update_quantidade(int mudanca) {
-		this.quantidade += mudanca;
-	}
 }
