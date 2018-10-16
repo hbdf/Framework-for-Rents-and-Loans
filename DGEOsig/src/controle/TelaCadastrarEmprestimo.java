@@ -28,8 +28,6 @@ public class TelaCadastrarEmprestimo implements Initializable{
     private JFXTextField matriculaTxt;
     @FXML
     private JFXTextField idTxt;
-    @FXML
-    private JFXTextField qtdTxt;
 
     @FXML
     private JFXTextArea descricaoTxtArea;
