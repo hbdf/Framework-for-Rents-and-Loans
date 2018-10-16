@@ -42,8 +42,7 @@ public class EmprestimoControle {
 		
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		Date date = new Date();
-		boolean aux = true;
-		Emprestimo emprestimo = new Emprestimo(usuario, material, date, prazo, aux);
+		Emprestimo emprestimo = new Emprestimo(usuario, material, date, prazo, 0);
 	
 		emprestimoDAO.cadastrar(emprestimo);
 		System.out.println("email");

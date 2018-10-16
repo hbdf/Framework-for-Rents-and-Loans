@@ -27,11 +27,11 @@ public class Emprestimo {
 	@Column
 	int prazo;
 	@Column
-	boolean status;
+	int status;
 	
 	public Emprestimo () {}
 
-	public Emprestimo (Usuario usuario, Material material, Date inicio, int prazo, boolean status) {
+	public Emprestimo (Usuario usuario, Material material, Date inicio, int prazo, int status) {
 		this.usuario = usuario;
 		this.material = material;
 		this.inicio = inicio;
@@ -39,11 +39,11 @@ public class Emprestimo {
 		this.status = status;
 	}
 	
-	public boolean get_status() {
+	public int get_status() {
 		return status;
 	}
 	
-	public void set_status(boolean status) {
+	public void set_status(int status) {
 		this.status = status;
 	}
 	
