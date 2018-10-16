@@ -62,7 +62,6 @@ public class TelaCadastrarMaterial implements Initializable {
 		}
 		
 		Material material = new Material(Integer.parseInt(toolId));
-		material.set_quantidade(1);
 		material.set_descricao(toolDescricao);
 		material.set_nome(toolTipo);
 		MaterialControle materialControle = MaterialControle.getInstance();

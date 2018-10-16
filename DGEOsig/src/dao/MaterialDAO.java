@@ -48,7 +48,7 @@ public class MaterialDAO {
 		return l;
 	}
 	
-	public void atualizar(Material material, int quantidade) {
+/*	public void atualizar(Material material, int quantidade) {
 		em.getTransaction().begin();
 		int nova_quantidade = material.get_quantidade() + quantidade;
 		Query q = em.createNativeQuery("UPDATE Material SET quantidade = " + nova_quantidade + " WHERE id = " + material.get_id());
@@ -56,7 +56,7 @@ public class MaterialDAO {
 		em.getTransaction().commit();
 		emf.close();
 	}
-	
+	*/
 	public void remover(Material material) {
 		em.getTransaction().begin();
 		Query q = em.createNativeQuery("DELETE Material FROM Material WHERE id = " + material.get_id());

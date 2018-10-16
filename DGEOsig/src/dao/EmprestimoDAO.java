@@ -32,7 +32,7 @@ public class EmprestimoDAO {
 	
 	public int get_por_id_usuario(int id) {
 		em.getTransaction().begin();
-		Query q =  em.createQuery("select emprestimo from Emprestimo emprestimo where usuario = " + id);
+		Query q =  em.createQuery("select emprestimo from Emprestimo emprestimo where usuario = " + id + "AND status = 1");
 		List<Emprestimo> l = q.getResultList();
 		em.getTransaction().commit();
 		emf.close();
@@ -40,8 +40,8 @@ public class EmprestimoDAO {
 	}
 	
 	public int get_emprestado_material(int id) {
-	/*	em.getTransaction().begin();
-		Query q =  em.createQuery("select emprestimo from Emprestimo emprestimo where material = " + id );
+		em.getTransaction().begin();
+		Query q =  em.createQuery("select emprestimo from Emprestimo emprestimo where material = " + id + "AND status = 1");
 		List<Emprestimo> l = q.getResultList();
 		em.getTransaction().commit();
 		emf.close();
@@ -49,8 +49,7 @@ public class EmprestimoDAO {
 		for (int i = 0; i < l.size(); i++) {
 			ans += l.get(i).get_status();
 		}
-		return ans; */
-		return 0;
+		return ans; 
 	}
 	
 	public List<Emprestimo> get_emprestimos() {

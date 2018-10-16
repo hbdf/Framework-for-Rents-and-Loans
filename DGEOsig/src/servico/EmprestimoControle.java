@@ -34,15 +34,19 @@ public class EmprestimoControle {
 		Usuario usuario = lst_usuario.get(0);
 		MaterialControle material_controle = MaterialControle.getInstance();
 		Material material = material_controle.buscar_id(Integer.parseInt(material_id));
-		
-		if(usuario.tipo == "Aluno" && emprestimoDAO.get_por_id_usuario(usuario.get_id()) > 0) {
+
+		if(usuario.get_tipo().equals("Aluno") && emprestimoDAO.get_por_id_usuario(usuario.get_id()) > 0) {
 			System.out.println("O usuario não pode fazer emprestimo");
 			return;
 		}
 		
+		if(emprestimoDAO.get_emprestado_material(Integer.parseInt(material_id)) > 0) {
+			System.out.println("Material esta emprestado");
+			return;
+		}
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		Date date = new Date();
-		Emprestimo emprestimo = new Emprestimo(usuario, material, date, prazo, 0);
+		Emprestimo emprestimo = new Emprestimo(usuario, material, date, prazo, 1);
 	
 		emprestimoDAO.cadastrar(emprestimo);
 		System.out.println("email");
