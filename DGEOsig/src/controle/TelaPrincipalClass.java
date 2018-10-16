@@ -228,7 +228,7 @@ public class TelaPrincipalClass implements Initializable {
 
    @FXML
    void openVisualizarUsuario(ActionEvent event) {
-	   System.out.println(tableViewUsuarios.getItems().get(0).matricula);
+	   System.out.println(tableViewUsuarios.getItems().get(0).get_matricula());
    }   
 
     
