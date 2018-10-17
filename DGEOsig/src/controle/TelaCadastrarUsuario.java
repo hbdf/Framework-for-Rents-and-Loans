@@ -63,11 +63,7 @@ public class TelaCadastrarUsuario  implements Initializable {
 		
 		Usuario usuario;
 		
-		if (userMatricula.isEmpty() || userMatricula.isEmpty() || userCPF.isEmpty() 
-			|| userNome.isEmpty() || userEmail.isEmpty()) {		
-			
-			emptyFieldAlert();
-		}
+
 		
 		usuario = new Usuario(userMatricula, userCPF, userNome, userEmail);
 		usuario.set_tipo(userTipo);
@@ -76,19 +72,12 @@ public class TelaCadastrarUsuario  implements Initializable {
 		try {
 			usuarioControle.cadastrar(usuario);
 		} catch (Exception e) {
-			//MOSTRAR TELA ERRO COM EXCEÇÃO
+			TelaAlertaErro telaErro = new TelaAlertaErro(e.getMessage());
 		}
 		this.closeWindow();
     }
 	
-	private void emptyFieldAlert() {
-		// T� dando algum tipo de CRASH no JVM quando a janela � fechada.
-		Alert alert = new Alert(Alert.AlertType.ERROR);
-		alert.setHeaderText(null);
-		alert.setContentText("Todos os campos devem ser preenchidos!");
-		alert.showAndWait();
-		return;
-	}
+
 
     @FXML
     void cancel(ActionEvent event) {    	

@@ -21,8 +21,14 @@ public final class UsuarioControle {
 		return instance;
 	}
 	private UsuarioControle () {}
+	void CamposVazios(Usuario usuario) throws Exception{
+		if(usuario.get_cpf().isEmpty() || usuario.get_email().isEmpty() || usuario.get_matricula().isEmpty() || usuario.get_nome().isEmpty()) {
+			throw new Exception("Todos os campos devem ser preenchidos");
+		}
+	}
 	public void cadastrar(Usuario usuario) throws Exception {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		CamposVazios(usuario);
 		if(usuarioDAO.buscar_matricula(usuario.get_matricula()).size() > 0) {
 			throw new Exception("Matricual Já cadastrada!");
 		}
