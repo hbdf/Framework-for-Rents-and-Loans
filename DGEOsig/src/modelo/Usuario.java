@@ -1,5 +1,8 @@
 package modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,16 +16,16 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	
-	private String matricula;
-	
-	private String cpf;
-	
-	private String nome;
-	
-	private String email;	
-	
-	private String tipo;
+	@Column
+	public String matricula;
+	@Column
+	public String cpf;
+	@Column
+	public String nome;
+	@Column
+	public String email;	
+	@Column
+	public String tipo;
 	
 //	protected Boolean isLimitado;
 	
@@ -30,8 +33,13 @@ public class Usuario {
 	protected List<Emprestimo> historicoEmprestimos;*/
 	
 	
+	public Usuario () {
+		
+	}
+	
 	// Construtor
 	public Usuario(String matricula, String cpf, String nome, String email) {
+		super();
 		
 		this.matricula = matricula;
 		this.cpf = cpf;
