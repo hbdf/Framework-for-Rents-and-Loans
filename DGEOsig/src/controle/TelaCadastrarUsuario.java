@@ -73,7 +73,11 @@ public class TelaCadastrarUsuario  implements Initializable {
 		usuario.set_tipo(userTipo);
 		
 		UsuarioControle usuarioControle = UsuarioControle.getInstance();
-		usuarioControle.cadastrar(usuario);
+		try {
+			usuarioControle.cadastrar(usuario);
+		} catch (Exception e) {
+			//MOSTRAR TELA ERRO COM EXCEÇÃO
+		}
 		this.closeWindow();
     }
 	

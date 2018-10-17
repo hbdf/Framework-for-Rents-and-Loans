@@ -328,7 +328,7 @@ public class TelaPrincipalClass implements Initializable {
 			
 			Stage primaryStage = new Stage();
 			primaryStage.setScene(scene);
-			primaryStage.setMaximized(true);  	// Inicializa a tela Principal maximizada.
+			primaryStage.setMaximized(false);  	// Inicializa a tela Principal maximizada.
 			primaryStage.setResizable(false);   // Desabilita o bot�o maximizar.
 			primaryStage.show();
 			

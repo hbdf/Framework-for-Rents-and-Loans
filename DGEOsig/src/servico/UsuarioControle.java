@@ -8,9 +8,11 @@ import modelo.Usuario;
 
 
 public final class UsuarioControle {
+	
 	/*
 	 * TODO RELAIZAR O CONTROLE DO USUARIO (CRIAR UM MÉTODO VALIDAÇÃO)
 	 */
+	
 	private static UsuarioControle instance;
 	public static UsuarioControle getInstance() {
 		if(instance == null) {
@@ -19,11 +21,10 @@ public final class UsuarioControle {
 		return instance;
 	}
 	private UsuarioControle () {}
-	public void cadastrar(Usuario usuario) {
+	public void cadastrar(Usuario usuario) throws Exception {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		if(usuarioDAO.buscar_matricula(usuario.get_matricula()).size() > 0) {
-			System.out.println("Não eh possivle inserir com mesma matricula");
-			return;
+			throw new Exception("Matricual Já cadastrada!");
 		}
 		usuarioDAO.cadastrar(usuario);
 	}
