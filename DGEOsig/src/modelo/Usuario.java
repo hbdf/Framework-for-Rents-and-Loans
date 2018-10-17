@@ -17,15 +17,15 @@ public class Usuario {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	@Column
-	public String matricula;
+	private String matricula;
 	@Column
-	public String cpf;
+	private String cpf;
 	@Column
-	public String nome;
+	private String nome;
 	@Column
-	public String email;	
+	private String email;	
 	@Column
-	public String tipo;
+	private String tipo;
 	
 //	protected Boolean isLimitado;
 	
