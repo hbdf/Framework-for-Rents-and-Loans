@@ -39,7 +39,7 @@ public final class UsuarioControle {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		CamposVazios(usuario);
 		if(usuarioDAO.buscar_matricula(usuario.get_matricula()).size() > 0) {
-			throw new Exception("Matricual Já cadastrada!");
+			throw new Exception("Matricula Já cadastrada!");
 		}
 		usuarioDAO.cadastrar(usuario);
 	}

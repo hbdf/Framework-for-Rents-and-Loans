@@ -10,7 +10,7 @@ public class Main extends Application {
 		new TelaLogin().open();
 	}
 	public static void main (String[] args) {
-
+		
 		launch(args);
 
 	}
