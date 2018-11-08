@@ -14,7 +14,7 @@ import modelo.Material;
 import modelo.Usuario;
 
 
-// VAI VIRAR ABSTRATA
+// Strategy
 public class Email {
 	private String from = "dgeosigufrn@gmail.com";
 	private String subject = "@acao de material.";

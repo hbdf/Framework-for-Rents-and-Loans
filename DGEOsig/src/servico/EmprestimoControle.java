@@ -12,7 +12,7 @@ import modelo.Material;
 import modelo.Usuario;
 
 
-
+// abstract
 public class EmprestimoControle {
 	
 	private boolean pode_fazer_emprestimo(Usuario usuario) {
