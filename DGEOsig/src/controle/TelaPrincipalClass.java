@@ -148,13 +148,14 @@ public class TelaPrincipalClass implements Initializable {
 	
 	@FXML
     void loadRegistrarEmprestimo(ActionEvent event) {
-		loadWindow("src/view/TelaRealizarEmprestimo.fxml"); 
+		System.out.println("testes");
+		loadWindow("DGEOsig/src/view/TelaRealizarEmprestimo.fxml"); 
     }
 	
 	@FXML
     void loadEncerrarEmprestimo(ActionEvent event) {
 		
-		loadWindow("src/view/TelaEncerrarEmprestimo.fxml"); 
+		loadWindow("DGEOsig/src/view/TelaEncerrarEmprestimo.fxml"); 
     }    
 	
 	@FXML
@@ -168,13 +169,13 @@ public class TelaPrincipalClass implements Initializable {
 	@FXML
     void loadCadastrarUsuario(ActionEvent event) {
 		
-		loadWindow("src/view/TelaCadastrarUsuario.fxml");
+		loadWindow("DGEOsig/src/view/TelaCadastrarUsuario.fxml");
     }
     
     @FXML
     void loadCadastrarMaterial(ActionEvent event) {		
 
-	    loadWindow("src/view/TelaCadastrarMaterial.fxml");
+	    loadWindow("DGEOsig/src/view/TelaCadastrarMaterial.fxml");
     }    
     
     void loadWindow(String location) {
@@ -321,6 +322,7 @@ public class TelaPrincipalClass implements Initializable {
 
 	public void open() {
 		try {
+			System.out.println("ooi\n");
 			Parent root = FXMLLoader.load(getClass().getResource("/view/TelaPrincipal.fxml"));	
 			
 			Scene scene = new Scene(root);
