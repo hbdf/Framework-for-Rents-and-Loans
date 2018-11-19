@@ -9,9 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToOne;
 
-@Entity
+@MappedSuperclass
 public abstract class Emprestimo {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

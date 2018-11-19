@@ -2,9 +2,12 @@ package modelo;
 
 import java.util.Date;
 
-import org.hibernate.annotations.Entity;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-@Entity
+
+
+@Entity(name="Emprestimo")  
 public class EmprestimoConc extends Emprestimo{
 	public EmprestimoConc () {}
 
