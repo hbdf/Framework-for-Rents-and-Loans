@@ -8,6 +8,7 @@ import java.util.List;
 import dao.EmprestimoDAO;
 import dao.UsuarioDAO;
 import modelo.Emprestimo;
+import modelo.EmprestimoConc;
 import modelo.Material;
 import modelo.Usuario;
 
@@ -46,7 +47,7 @@ public class EmprestimoControle {
 		}
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		Date date = new Date();
-		Emprestimo emprestimo = new Emprestimo(usuario, material, date, prazo, 1);
+		Emprestimo emprestimo = new EmprestimoConc(usuario, material, date, prazo, 1);
 	
 		emprestimoDAO.cadastrar(emprestimo);
 		System.out.println("email");
