@@ -12,6 +12,7 @@ import javax.persistence.Query;
 import modelo.Emprestimo;
 /*import objeto.modelo.Material;
 import objeto.modelo.Usuario;
+Isso é um teste
 */
 public class EmprestimoDAO {
 
