@@ -1,6 +1,7 @@
 package controle;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
@@ -87,8 +88,12 @@ public class TelaCadastrarUsuario  implements Initializable {
     
     private void initComboBoxTipo() {
     	
-    	ObservableList<Label> tipos = FXCollections.observableArrayList( new Label("Servidor"), new Label("Aluno") );
-    	
+    	ObservableList<Label> tipos = FXCollections.observableArrayList();
+    	ITiposUsuario tiposUsuarios = new TiposUsuarios();
+    	ArrayList<String> tiposUser = tiposUsuarios.getTipos();
+    	for (int i = 0; i < tiposUser.size(); i++) {
+    		tipos.add(new Label(tiposUser.get(i)));
+    	}
 		this.tipoComboBox.setItems(tipos);
 	}
     
