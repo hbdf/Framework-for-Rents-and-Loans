@@ -18,6 +18,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import modelo.Usuario;
+import modelo.UsuarioConc;
 import servico.UsuarioControle;
 
 
@@ -65,7 +66,7 @@ public class TelaCadastrarUsuario  implements Initializable {
 		
 
 		
-		usuario = new Usuario(userMatricula, userCPF, userNome, userEmail);
+		usuario = new UsuarioConc(userMatricula, userCPF, userNome, userEmail);
 		usuario.set_tipo(userTipo);
 		
 		UsuarioControle usuarioControle = UsuarioControle.getInstance();

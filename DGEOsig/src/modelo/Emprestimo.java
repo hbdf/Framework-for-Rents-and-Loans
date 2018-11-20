@@ -17,7 +17,7 @@ public abstract class Emprestimo {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	@OneToOne
+	@OneToOne(targetEntity = UsuarioConc.class)
 	@JoinColumn(name="usuario")
 	Usuario usuario;
 	@OneToOne

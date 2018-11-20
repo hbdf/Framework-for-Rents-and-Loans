@@ -14,6 +14,7 @@ import modelo.Usuario;
 
 
 // abstract
+// This abstract class has the validation function using template method pattern
 public class EmprestimoControle {
 	
 	private boolean pode_fazer_emprestimo(Usuario usuario) {
@@ -23,7 +24,6 @@ public class EmprestimoControle {
 		}
 		return true;
 	}
-	
 	
 	
 	public void cadastrar(String usuario_id, String material_id, int prazo) {
@@ -36,13 +36,9 @@ public class EmprestimoControle {
 		MaterialControle material_controle = MaterialControle.getInstance();
 		Material material = material_controle.buscar_id(Integer.parseInt(material_id));
 
-		if(usuario.get_tipo().equals("Aluno") && emprestimoDAO.get_por_id_usuario(usuario.get_id()) > 0) {
-			System.out.println("O usuario não pode fazer emprestimo");
-			return;
-		}
-		
-		if(emprestimoDAO.get_emprestado_material(Integer.parseInt(material_id)) > 0) {
-			System.out.println("Material esta emprestado");
+		AbsRegrasEmprestimo regras = new RegrasEmprestimo();
+		if(regras.check_emprestimo(usuario, material, emprestimoDAO) == false) {
+			System.out.println("Emprestimo nao pode ser realizado\n");
 			return;
 		}
 		UsuarioDAO usuarioDAO = new UsuarioDAO();

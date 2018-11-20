@@ -8,10 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 
-@Entity
-public class Usuario {
+@MappedSuperclass
+public abstract class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -27,10 +28,6 @@ public class Usuario {
 	@Column
 	private String tipo;
 	
-//	protected Boolean isLimitado;
-	
-/*	protected Emprestimo emprestimoAtivo;
-	protected List<Emprestimo> historicoEmprestimos;*/
 	
 	
 	public Usuario () {
@@ -46,43 +43,9 @@ public class Usuario {
 		this.nome = nome;
 		this.email = email;
 		
-		// Todo Requisitante assim que cadastrado n�o deve ter nenhum empr�stimo ativo, logicamente.
-		/*this.emprestimoAtivo = null;
-		this.historicoEmprestimos = new ArrayList<>();*/
 	}
-	/*
-	// Cria um NOVO empr�stimo.
-	public boolean createEmprestimoAtivo(Emprestimo emprestimo) {
-		
-		if (hasEmprestimoAtivo()) {
-			// O requisitante j� possui um Empr�stimo ativo. 
-			// Caso queira e possa pegar mais algum material o empr�stimo ATIVO deve ser EDITADO.
-			return false;
-		}
-		
-		this.emprestimoAtivo = emprestimo;
-		// Empr�stimo criado com sucesso.
-		return true;
-	}
-	
-	// Encerra o Empr�stimo ativo/atual.
-	public boolean finishEmprestimoAtivo() {
-		
-		this.historicoEmprestimos.add(emprestimoAtivo);
-		this.emprestimoAtivo = null;		
-		// Empr�stimo encerrado com sucesso.
-		return true;
-	}
-	
-	public boolean hasEmprestimoAtivo() {
-		
-		if(this.emprestimoAtivo != null) {
-			return true;
-		}
-		
-		return false;
-	}
-	*/
+
+
 	public String get_cpf() {
 		return cpf;
 	}
