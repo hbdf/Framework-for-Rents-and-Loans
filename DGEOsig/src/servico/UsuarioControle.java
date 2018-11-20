@@ -21,26 +21,15 @@ public final class UsuarioControle {
 		return instance;
 	}
 	private UsuarioControle () {}
-	
-	/*
-	 * Teste se algum campo está vazio
-	 */
-	void CamposVazios(Usuario usuario) throws Exception{
-		if(usuario.get_cpf().isEmpty() || usuario.get_email().isEmpty() || usuario.get_matricula().isEmpty() || usuario.get_nome().isEmpty()) {
-			throw new Exception("Todos os campos devem ser preenchidos");
-		}
-	}
-	
+
 	/*
 	 * Cadastra um usuario.
 	 * Método completo com lançamento de exceção.
 	 */
 	public void cadastrar(Usuario usuario) throws Exception {
+		AbsRegrasUsuarioControle regras = new RegrasUsuarioControle();
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
-		CamposVazios(usuario);
-		if(usuarioDAO.buscar_matricula(usuario.get_matricula()).size() > 0) {
-			throw new Exception("Matricula Já cadastrada!");
-		}
+		regras.validateUsuario(usuario, usuarioDAO);
 		usuarioDAO.cadastrar(usuario);
 	}
 	

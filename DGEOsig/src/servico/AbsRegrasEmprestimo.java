@@ -3,6 +3,7 @@ package servico;
 import dao.EmprestimoDAO;
 import modelo.Material;
 import modelo.Usuario;
+/* This is an implementation of template method */
 
 public abstract class AbsRegrasEmprestimo {
 	public abstract boolean regras_adicionais(Usuario usuario, Material material, EmprestimoDAO emprestimoDAO);
