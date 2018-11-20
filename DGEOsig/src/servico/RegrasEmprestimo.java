@@ -10,5 +10,11 @@ public class RegrasEmprestimo extends AbsRegrasEmprestimo{
 	public boolean regras_adicionais(Usuario usuario, Material material, EmprestimoDAO emprestimoDAO) {
 		return true;
 	}
+
+	@Override
+	public void calc_param(Usuario usuario, Material material) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
