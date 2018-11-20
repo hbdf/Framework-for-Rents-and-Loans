@@ -20,7 +20,7 @@ public abstract class Emprestimo {
 	@OneToOne(targetEntity = UsuarioConc.class)
 	@JoinColumn(name="usuario")
 	Usuario usuario;
-	@OneToOne
+	@OneToOne(targetEntity = MaterialConc.class)
 	@JoinColumn(name="material")
 	Material material;
 	@Column

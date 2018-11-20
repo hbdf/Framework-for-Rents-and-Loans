@@ -19,6 +19,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import modelo.Material;
+import modelo.MaterialConc;
 import servico.MaterialControle;
 
 public class TelaCadastrarMaterial implements Initializable {
@@ -61,7 +62,8 @@ public class TelaCadastrarMaterial implements Initializable {
 			return ;
 		}
 		
-		Material material = new Material(Integer.parseInt(toolId));
+		Material material = new MaterialConc(Integer.parseInt(toolId));
+		/*((MaterialConc) material).set_aleatorio(toolTipo);*/
 		material.set_descricao(toolDescricao);
 		material.set_nome(toolTipo);
 		MaterialControle materialControle = MaterialControle.getInstance();
@@ -73,7 +75,7 @@ public class TelaCadastrarMaterial implements Initializable {
     	
     	ObservableList<Label> tipos = FXCollections.observableArrayList(new Label("1 - Bussola"), new Label("2 - GPS"), new Label("3 - Martelo Cristalino"), 
 				new Label("4 - Martelo Sedimentar"), new Label("5 - Perneiras") );
-    	
+    			
 		this.tiposComboBox.setItems(tipos);
 	}
     	

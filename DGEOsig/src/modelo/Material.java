@@ -4,12 +4,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
 
 
 
-@Entity
-public class Material {
+@MappedSuperclass
+public abstract class Material {
 	@Id
 	@Column
 	private int id; // numero de tombamento
@@ -41,7 +42,9 @@ public class Material {
 	public String get_descricao() {
 		return descricao;
 	}
-
+	public void set_id(int idd) {
+		this.id = idd;
+	}
 	
 	public void set_nome(String nome) {
 		this.nome = nome;
