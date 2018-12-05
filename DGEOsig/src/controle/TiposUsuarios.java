@@ -7,9 +7,10 @@ public class TiposUsuarios implements ITiposUsuario{
 	@Override
 	public ArrayList<String> getTipos() {
 		ArrayList<String> ans = new ArrayList<String>();
-		ans.add("tipo1");
-		ans.add("tipo2");
-		ans.add("tipo3");
+		ans.add("Aluno Graduacao");
+		ans.add("Alunos Pos");
+		ans.add("Professor");
+		ans.add("Administrador");
 		return ans;
 	}
 	

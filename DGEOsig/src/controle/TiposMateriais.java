@@ -6,9 +6,10 @@ public class TiposMateriais implements ITiposMaterial{
 	@Override
 	public ArrayList<String> getTipos() {
 		ArrayList<String> ans = new ArrayList<String>();
-		ans.add("Mat1");
-		ans.add("Mat2");
-		ans.add("Mat3");
+		ans.add("Martelo");
+		ans.add("Lapis");
+		ans.add("Bussola");
+		ans.add("Reologio");
 		return ans;
 	}
 }
