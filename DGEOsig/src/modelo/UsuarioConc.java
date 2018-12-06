@@ -17,5 +17,4 @@ public class UsuarioConc extends Usuario{
 		set_email(email);
 		
 	}
-
 }

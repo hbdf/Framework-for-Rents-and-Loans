@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
+import controle.Main;
 import controle.TelaAlertaErro;
 import dao.EmprestimoDAO;
 import dao.UsuarioDAO;
@@ -36,8 +37,8 @@ public class EmprestimoControle {
 	Usuario usuario = lst_usuario.get(0);
 	MaterialControle material_controle = MaterialControle.getInstance();
 	Material material = material_controle.buscar_id(Integer.parseInt(material_id));
-
-	AbsRegrasEmprestimo regras = new RegrasEmprestimo();
+	AbsFactoryRegras rules = new ConcAbsFactory();
+	AbsRegrasEmprestimo regras = rules.criar_emprestimo_regra();
 	if(regras.check_emprestimo(usuario, material, emprestimoDAO) == false) {
 	    TelaAlertaErro telaErro = new TelaAlertaErro("Emprestimo nao pode ser realizado");
 	    return;
